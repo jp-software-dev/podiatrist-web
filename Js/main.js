@@ -70,10 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 20) {
-            header.style.boxShadow = "0 4px 20px rgba(45, 71, 57, 0.08)";
+            header.style.boxShadow = "0 4px 20px rgba(45, 71, 57, 0.15)";
             header.style.padding = "10px 0";
         } else {
-            header.style.boxShadow = "none";
+            header.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.08)";
             header.style.padding = "15px 0";
         }
     });

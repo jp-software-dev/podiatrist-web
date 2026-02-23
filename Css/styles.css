@@ -244,14 +244,14 @@ h1, h2, h3, h4 {
 /* BOTÓN SECUNDARIO (CONTORNO) */
 .btn-secondary {
   background-color: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-light);
+  color: var(--white);
+  border: 2px solid var(--white);
 }
 
 /* EFECTO HOVER EN BOTÓN SECUNDARIO */
 .btn-secondary:hover {
-  background-color: var(--primary-light);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--primary-color);
 }
 
 /* TARJETAS DE ESTADÍSTICAS EN EL HERO */
@@ -647,23 +647,159 @@ h1, h2, h3, h4 {
   background-color: #128c7e;
 }
 
-/* RESPONSIVE DESIGN */
+/* ===== RESPONSIVE DESIGN ===== */
+/* SOLO AFECTA A TABLETS Y MÓVILES - PC SE MANTIENE IGUAL */
+
+/* Estilos para tablets y pantallas medianas */
 @media (max-width: 992px) {
-  .section-title { font-size: 2.2rem; }
-  .hero-title { font-size: 2.8rem; }
-  .ubicacion-content { grid-template-columns: 1fr; gap: 40px; }
+  .section-title { 
+    font-size: 2.2rem; 
+  }
+  .hero-title { 
+    font-size: 2.8rem; 
+  }
+  .ubicacion-content { 
+    grid-template-columns: 1fr; 
+    gap: 40px; 
+  }
 }
 
+/* Estilos para móviles y pantallas pequeñas */
 @media (max-width: 768px) {
-  .menu-toggle { display: block; z-index: 1000000; }
-  .nav-menu {
-    position: fixed; top: 0; right: 0; width: 280px; height: 100vh;
-    background-color: var(--white); flex-direction: column; padding-top: 80px;
-    transform: translateX(100%); opacity: 0; visibility: hidden; transition: all 0.3s ease;
+  /* Mostrar el botón de menú hamburguesa */
+  .menu-toggle { 
+    display: block; 
   }
-  .nav-menu.active { transform: translateX(0); opacity: 1; visibility: visible; }
-  .hero-title { font-size: 2.2rem; }
-  .whatsapp-btn { width: 50px; height: 50px; font-size: 28px; bottom: 20px; right: 20px; }
+  
+  /* Configuración del menú desplegable */
+  .nav-menu {
+    position: fixed; 
+    top: 0; 
+    right: -100%;
+    width: 280px; 
+    height: 100vh;
+    background-color: var(--white); 
+    flex-direction: column; 
+    padding-top: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 9998;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  /* Clase para mostrar el menú */
+  .nav-menu.active { 
+    right: 0; 
+  }
+  
+  /* Ajustes de los links en el menú móvil */
+  .nav-link {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gray);
+  }
+  
+  /* Ajustes del Hero para móviles */
+  .hero {
+    min-height: 80vh;
+    margin-top: 70px;
+  }
+  
+  .hero-title { 
+    font-size: 2.2rem; 
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  /* ===== ESTADÍSTICAS EN MÓVIL ===== */
+  /* Ocultar la tarjeta de Satisfacción */
+  .stat-card:last-child {
+    display: none;
+  }
+  
+  /* Convertir hero-stats en grid de 2 columnas */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Ajustar las tarjetas restantes */
+  .stat-card {
+    min-width: unset;
+    width: 100%;
+    padding: 20px 15px;
+    margin: 0;
+  }
+  
+  .stat-card:first-child,
+  .stat-card:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  /* Ajuste del grid de servicios */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  /* Ajustes de las tarjetas de información */
+  .info-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .info-icon {
+    margin-bottom: 10px;
+  }
+  
+  /* Ajustes del footer */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    /* ELIMINADO: text-align: center; */
+  }
+  
+  .footer-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  /* ===== CONTACTO SIN CENTRAR ===== */
+  .footer-contact {
+    text-align: left; /* Asegura alineación izquierda */
+  }
+  
+  .footer-contact p {
+    justify-content: flex-start; /* Cambiado de 'center' a 'flex-start' */
+  }
+  
+  /* Botón de WhatsApp más pequeño en móviles */
+  .whatsapp-btn { 
+    width: 50px; 
+    height: 50px; 
+    font-size: 28px; 
+    bottom: 20px; 
+    right: 20px; 
+  }
 }
 
 /* CLASES PARA ANIMACIONES (REVEAL) */
