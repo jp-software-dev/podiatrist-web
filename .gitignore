@@ -1,12 +1,7 @@
-# --- EDITORES (Privacidad de tu entorno) ---
+# --- EDITORES ---
 .vscode/
 .hintrc
 
-# --- SEGURIDAD Y CREDENCIALES (Protección de datos) ---
-.env
-credentials.json
-*.sql
-
-# --- ARCHIVOS DE SISTEMA (Basura de Windows) ---
+# --- ARCHIVOS DE SISTEMA---
 Thumbs.db
 desktop.ini
