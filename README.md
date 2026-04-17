@@ -6,9 +6,6 @@
 
 A professional, responsive landing page designed specifically for a podiatry clinic. This web project focuses on providing a clean, accessible, and user-friendly experience for patients looking for foot care services.
 
-> **Note:** [Añade aquí una breve oración si el proyecto está en vivo, ej: "Check out the live demo here: (link)"]
-
-*(Añade una captura de pantalla de tu proyecto aquí)*
 ## Features
 
 * **Modern UI/UX:** Clean design tailored for the healthcare sector to build trust and professionalism.
@@ -27,4 +24,4 @@ Follow these steps to deploy the project locally:
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/jp-software-dev/podiatrist-web.git](https://github.com/jp-software-dev/podiatrist-web.git)
+   git clone https://github.com/jp-software-dev/podiatrist-web.git
