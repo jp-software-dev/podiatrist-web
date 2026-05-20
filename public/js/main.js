@@ -1,25 +1,4 @@
-/**
- * @version 1.0.0
- * @author Dr. en Podología Team
- * @license Proprietary
- * 
- * @description
- * Main interactions for podiatry clinic landing page.
- * Features: Mobile menu toggle, scroll spy, reveal animations,
- *           dynamic copyright year, WhatsApp link sanitization,
- *           header shadow on scroll, anti-debugging, anti-spam,
- *           content copy protection.
- * 
- * @dependencies
- * - Font Awesome 6.4.0 (external)
- * - Google Fonts (Poppins, Montserrat)
- * 
- * @notes
- * - All selectors use class-based DOM queries.
- * - Non-breaking changes only: no existing logic altered.
- */
-
-// SECURITY: WhatsApp number sanitization - Prevents javascript: injection and ensures only digits
+// Sanitización link WhatsApp
 (function sanitizeWhatsAppLink() {
     const waBtn = document.querySelector('.whatsapp-btn');
     if (waBtn && waBtn.dataset.waNumber) {
@@ -28,12 +7,12 @@
         if (sanitized.length >= 10 && sanitized.length <= 15) {
             waBtn.href = `https://wa.me/${sanitized}`;
         } else {
-            console.warn('Web Performance: Invalid WhatsApp number format');
+            console.warn('Formato de WhatsApp inválido');
         }
     }
 })();
 
-// ANTI-DEBUGGING: Detect DevTools and warn (non-breaking, purely informational)
+// Detección de DevTools
 (function detectDevTools() {
     let devToolsOpen = false;
     const element = new Image();
@@ -41,7 +20,7 @@
     Object.defineProperty(element, 'id', {
         get: function() {
             devToolsOpen = true;
-            console.warn('Security: Developer tools detected. This is for informational purposes only.');
+            console.warn('Alerta: Developer tools detectadas.');
             return '';
         }
     });
@@ -53,7 +32,7 @@
         if (devToolsOpen) {
             const warningDiv = document.createElement('div');
             warningDiv.style.cssText = 'position:fixed; bottom:10px; right:10px; background:#ff9800; color:#000; padding:5px 10px; font-size:12px; border-radius:5px; z-index:9999; font-family:monospace; opacity:0.7; pointer-events:none;';
-            warningDiv.textContent = '🔍 DevTools detected';
+            warningDiv.textContent = '🔍 DevTools detectado';
             if (!document.querySelector('.devtools-warning')) {
                 warningDiv.classList.add('devtools-warning');
                 document.body.appendChild(warningDiv);
@@ -63,7 +42,7 @@
     }, 1000);
 })();
 
-// ANTI-SPAM: Deobfuscate contact info on click only
+// Anti-Spam: Ocultar info contacto hasta hacer clic
 const phoneLink = document.getElementById('phoneLink');
 const emailLink = document.getElementById('emailLink');
 
@@ -81,17 +60,17 @@ if (emailLink) {
     });
 }
 
-// CONTENT PROTECTION: Warn when copying content and add attribution
+// Protección de Contenido: Atribución al copiar
 document.addEventListener('copy', (e) => {
     const selection = window.getSelection().toString();
     if (selection.length > 20) {
-        console.warn('Content copy detected. Please respect copyright.');
+        console.warn('Copia detectada.');
         e.clipboardData.setData('text/plain', selection + '\n\nFuente: Clínica Podológica - Dr. en Podología');
         e.preventDefault();
     }
 });
 
-// OPTIONAL: Disable right-click context menu on specific elements
+// Desactivar clic derecho en elementos clave
 document.querySelectorAll('.service-card, .info-card, .hero').forEach(el => {
     el.addEventListener('contextmenu', (e) => {
         e.preventDefault();
@@ -99,7 +78,7 @@ document.querySelectorAll('.service-card, .info-card, .hero').forEach(el => {
     });
 });
 
-// Hamburger menu for mobile devices
+// Menú Hamburguesa Móvil
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -118,7 +97,7 @@ if (menuToggle) {
   });
 }
 
-// Close menu when clicking on a link
+// Cerrar menú móvil al hacer clic en un enlace
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
     navMenu.classList.remove('active');
@@ -128,7 +107,7 @@ navLinks.forEach(link => {
   });
 });
 
-// Highlight active link on scroll (Scroll Spy)
+// Scroll Spy: Resaltar enlace activo en navbar
 window.addEventListener('scroll', () => {
   const sections = document.querySelectorAll('section');
   const scrollY = window.pageYOffset;
@@ -149,7 +128,7 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Reveal animation on scroll
+// Animación al hacer scroll (Reveal)
 function reveal() {
   const reveals = document.querySelectorAll('.reveal');
   
@@ -167,17 +146,15 @@ function reveal() {
 }
 
 window.addEventListener('scroll', reveal);
-// Add reveal class to elements we want to animate (e.g., service-card, info-card)
 document.querySelectorAll('.service-card, .info-card, .section-header').forEach(el => {
   el.classList.add('reveal');
 });
-// Run once on load to show initially visible elements
 reveal();
 
-// Dynamic current year in footer
+// Año dinámico en Footer
 document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-// UX Micro-interaction: Add shadow on header scroll - Provides visual feedback when user scrolls past hero section
+// Sombra en Header al hacer scroll
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
     if (window.scrollY > 50) {
