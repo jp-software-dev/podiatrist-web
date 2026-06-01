@@ -26,6 +26,12 @@
   box-sizing: border-box;
 }
 
+/* Espejar ícono de teléfono invertido */
+.fa-phone-alt {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+
 /* Scroll Suave */
 html {
   scroll-behavior: smooth;
@@ -648,7 +654,7 @@ h1, h2, h3, h4 {
     border-bottom: 1px solid var(--gray);
   }
   
-  .hero { min-height: 80vh; margin-top: 70px; }
+  .hero { min-height: 80vh; margin-top: 110px; }
   .hero-title { font-size: 2.2rem; }
   .hero-subtitle { font-size: 1.1rem; }
   
