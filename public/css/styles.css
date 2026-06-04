@@ -164,7 +164,9 @@ h1, h2, h3, h4 {
   background-color: var(--primary-light);
 }
 
-/* Sección Hero */
+/* Sección Hero 
+   Aquí se añade padding-bottom para despegar los recuadros de estadística
+   del borde inferior de la imagen. */
 .hero {
   background: linear-gradient(rgba(45, 71, 57, 0.3), rgba(45, 71, 57, 0.3)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1920');
   background-size: cover;
@@ -172,10 +174,13 @@ h1, h2, h3, h4 {
   background-repeat: no-repeat;
   min-height: 90vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: relative;
   margin-top: 0;
   padding-top: 100px;
+  padding-bottom: 80px; /* <--- ESPACIADO AÑADIDO AQUI PARA DESPEGAR LOS CUADROS */
 }
 
 /* Contenido Hero */
@@ -187,6 +192,7 @@ h1, h2, h3, h4 {
   color: var(--white);
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .hero-text {
@@ -360,7 +366,9 @@ h1, h2, h3, h4 {
   flex-grow: 1;
 }
 
-/* Lista de Características (Servicios) */
+/* Lista de Características (Servicios)
+   Controla la alineación horizontal de los íconos de check 
+   con el texto en cada tarjeta de servicio, además de su color y espacio inferior. */
 .service-features {
   list-style: none;
 }
@@ -410,6 +418,9 @@ h1, h2, h3, h4 {
   gap: 25px;
 }
 
+/* Tarjeta de Información de Ubicación
+   Gestiona la disposición en fila (flex), con un fondo blanco
+   y un borde redondeado, añadiendo una sombra suave para profundidad. */
 .info-card {
   display: flex;
   gap: 20px;
@@ -440,12 +451,18 @@ h1, h2, h3, h4 {
   flex-shrink: 0;
 }
 
+/* Texto de Información H4
+   Establece el color principal, margen inferior y tamaño 
+   de letra de los subtítulos de la sección ubicación. */
 .info-text h4 {
   color: var(--primary-color);
   margin-bottom: 5px;
   font-size: 1.2rem;
 }
 
+/* Párrafo de Información 
+   Da color claro y un espaciado entre líneas óptimo 
+   para la lectura de las direcciones y horarios. */
 .info-text p {
   color: var(--text-light);
   line-height: 1.6;
@@ -625,7 +642,9 @@ h1, h2, h3, h4 {
   .ubicacion-content { grid-template-columns: 1fr; gap: 40px; }
 }
 
-/* Responsive: Móviles */
+/* Responsive: Móviles 
+   Aquí también se añade padding-bottom al hero para móviles,
+   garantizando que la imagen se expanda lo suficiente hacia abajo. */
 @media (max-width: 768px) {
   .menu-toggle { display: block; }
   
@@ -655,7 +674,7 @@ h1, h2, h3, h4 {
     border-bottom: 1px solid var(--gray);
   }
   
-  .hero { min-height: 80vh; margin-top: 0; padding-top: 120px; }
+  .hero { min-height: 80vh; margin-top: 0; padding-top: 120px; padding-bottom: 60px; } /* <--- ESPACIADO AÑADIDO PARA MÓVIL */
   .hero-title { font-size: 2.2rem; }
   .hero-subtitle { font-size: 1.1rem; }
   

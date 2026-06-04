@@ -1,9 +1,10 @@
-// Sanitización link WhatsApp
+// Función autoejecutable para la sanitización del enlace de WhatsApp
+// Extrae únicamente los números del atributo del botón para asegurar que el enlace de 'wa.me' sea válido y no contenga caracteres erróneos.
 (function sanitizeWhatsAppLink() {
     const waBtn = document.querySelector('.whatsapp-btn');
     if (waBtn && waBtn.dataset.waNumber) {
         const rawNumber = waBtn.dataset.waNumber;
-        const sanitized = rawNumber.replace(/\D/g, '');
+        const sanitized = rawNumber.replace(/\D/g, ''); // Elimina todo lo que no sea dígito
         if (sanitized.length >= 10 && sanitized.length <= 15) {
             waBtn.href = `https://wa.me/${sanitized}`;
         } else {
@@ -12,11 +13,13 @@
     }
 })();
 
-// Detección de DevTools
+// Función autoejecutable para la detección de herramientas de desarrollador (DevTools)
+// Crea un elemento imagen vacío y un intervalo que revisa si el usuario tiene abierta la consola del navegador, mostrando una alerta temporal.
 (function detectDevTools() {
     let devToolsOpen = false;
     const element = new Image();
     
+    // Al intentar leer el ID de la imagen en consola, se dispara este evento
     Object.defineProperty(element, 'id', {
         get: function() {
             devToolsOpen = true;
@@ -25,6 +28,7 @@
         }
     });
     
+    // Intervalo de comprobación cada segundo
     setInterval(() => {
         devToolsOpen = false;
         console.log(element);
@@ -42,7 +46,8 @@
     }, 1000);
 })();
 
-// Anti-Spam: Ocultar info contacto hasta hacer clic
+// Protección Anti-Spam para enlaces de contacto
+// Oculta la información de contacto real de los bots en el HTML inicial. Cuando un usuario humano hace clic, se ejecuta la redirección real ('tel:' o 'mailto:').
 const phoneLink = document.getElementById('phoneLink');
 const emailLink = document.getElementById('emailLink');
 
@@ -60,17 +65,19 @@ if (emailLink) {
     });
 }
 
-// Protección de Contenido: Atribución al copiar
+// Protección de Contenido: Atribución automática al copiar
+// Intercepta el evento de copia de texto. Si el usuario copia más de 20 caracteres, añade automáticamente una firma con la fuente de la página al portapapeles.
 document.addEventListener('copy', (e) => {
     const selection = window.getSelection().toString();
     if (selection.length > 20) {
         console.warn('Copia detectada.');
         e.clipboardData.setData('text/plain', selection + '\n\nFuente: Clínica Podológica - Dr. en Podología');
-        e.preventDefault();
+        e.preventDefault(); // Previene la copia normal para inyectar nuestra versión
     }
 });
 
-// Desactivar clic derecho en elementos clave
+// Desactiva el clic derecho en elementos visuales clave (protección anticopia básica)
+// Aplica para las tarjetas de servicios, información y la sección principal (hero).
 document.querySelectorAll('.service-card, .info-card, .hero').forEach(el => {
     el.addEventListener('contextmenu', (e) => {
         e.preventDefault();
@@ -78,7 +85,8 @@ document.querySelectorAll('.service-card, .info-card, .hero').forEach(el => {
     });
 });
 
-// Menú Hamburguesa Móvil
+// Lógica para el menú de hamburguesa en versión móvil
+// Despliega u oculta el panel lateral de navegación intercambiando los íconos de "hamburguesa" a "X".
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -97,7 +105,7 @@ if (menuToggle) {
   });
 }
 
-// Cerrar menú móvil al hacer clic en un enlace
+// Cierra automáticamente el menú móvil cuando el usuario hace clic en algún enlace
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
     navMenu.classList.remove('active');
@@ -107,7 +115,8 @@ navLinks.forEach(link => {
   });
 });
 
-// Scroll Spy: Resaltar enlace activo en navbar
+// Scroll Spy: Resalta el enlace activo en la barra de navegación (navbar) según la sección visible
+// Calcula la altura de la página y detecta en qué sección se encuentra el usuario para iluminar su respectivo enlace en el menú superior.
 window.addEventListener('scroll', () => {
   const sections = document.querySelectorAll('section');
   const scrollY = window.pageYOffset;
@@ -128,7 +137,8 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Animación al hacer scroll (Reveal)
+// Animación al hacer scroll (Efecto Reveal/Aparición)
+// A medida que el usuario baja por la página, evalúa si los elementos con la clase '.reveal' entran en pantalla para activarlos mediante CSS y generar un efecto de aparición suave.
 function reveal() {
   const reveals = document.querySelectorAll('.reveal');
   
@@ -145,16 +155,17 @@ function reveal() {
   }
 }
 
+// Ejecuta la animación de revelar en el momento de cargar y prepara las tarjetas para el efecto
 window.addEventListener('scroll', reveal);
 document.querySelectorAll('.service-card, .info-card, .section-header').forEach(el => {
   el.classList.add('reveal');
 });
 reveal();
 
-// Año dinámico en Footer
+// Actualización de año dinámico en el texto del Footer (Pie de página)
 document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-// Sombra en Header al hacer scroll
+// Agrega una clase que genera sombra en el Header (Cabecera) cuando el usuario baja en la página
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
     if (window.scrollY > 50) {
