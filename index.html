@@ -16,26 +16,27 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Clínica Podológica - Dr. en Podología">
   <meta name="twitter:description" content="Cuidado podológico de excelencia con tecnología de vanguardia.">
+  
   <title>Clínica Podológica - Dr. en Podología</title>
   
   <link rel="icon" href="public/images/icono_circular.ico" type="image/x-icon">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/tabler-icons.min.css">
   <link rel="stylesheet" href="public/css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  
   <header class="header">
     <div class="container header-container">
       <div class="logo-container">
-        <a href="#inicio" style="text-decoration: none;">
-            <h1 class="logo"><span class="logo-accent">Dr.</span> en Podología</h1>
-            <p class="logo-subtitle">Podología Clínica Avanzada</p>
+        <a href="#inicio">
+          <h1 class="logo"><span>Dr.</span> en Podología</h1>
+          <p class="logo-subtitle">Podología Clínica Avanzada</p>
         </a>
       </div>
       
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-        <i class="fas fa-bars"></i>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <i class="ti ti-menu-2"></i>
       </button>
       
       <nav class="nav-menu" id="navMenu">
@@ -46,205 +47,206 @@
       </nav>
     </div>
   </header>
-  <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1920" 
-       alt=""
-       loading="eager"
-       style="display: none;"
-       aria-hidden="true">
 
-  <section class="hero" id="inicio">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h2 class="hero-title">Tu <span class="highlight">bienestar</span> empieza desde los pies</h2>
-        <p class="hero-subtitle">Especialista en podología clínica con más de 10 años de experiencia. Cuidamos de tu salud con tecnología de vanguardia y protocolos médicos estandarizados.</p>
-        <div class="hero-buttons">
-          <a href="#ubicacion" class="btn btn-primary">Ver ubicación <i class="fas fa-calendar-check"></i></a>
-          <a href="#servicios" class="btn btn-secondary">Tratamientos <i class="fas fa-chevron-right"></i></a>
-        </div>
-      </div>
+  <main>
+    <section class="hero" id="inicio">
+      <video class="hero-video" autoplay muted loop playsinline poster="https://images.pexels.com/videos/9573580/pexels-photo-9573580.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=630">
+        <source src="https://videos.pexels.com/video-files/9573580/9573580-uhd_2160_4096_25fps.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
       
-      <div class="hero-stats">
-        <div class="stat-card">
-          <div class="stat-number">10+</div>
-          <div class="stat-label">Años de Experiencia</div>
+      <div class="container hero-content">
+        <div class="hero-text-content">
+          <h2 class="hero-title">Tu <span>bienestar</span> empieza desde los pies</h2>
+          <p class="hero-subtitle">Especialista en podología clínica con más de 10 años de experiencia. Cuidamos de tu salud con tecnología de vanguardia y protocolos médicos estandarizados.</p>
+          <div class="hero-buttons">
+            <a href="#ubicacion" class="btn btn-primary">Ver ubicación <i class="ti ti-calendar-check"></i></a>
+            <a href="#servicios" class="btn btn-secondary">Tratamientos <i class="ti ti-chevron-right"></i></a>
+          </div>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">1000+</div>
-          <div class="stat-label">Pacientes Atendidos</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Satisfacción</div>
+        
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-label">Experiencia</span>
+            <span class="stat-number">10+</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Pacientes</span>
+            <span class="stat-number">1000+</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Satisfacción</span>
+            <span class="stat-number">100%</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section services" id="servicios">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Servicios <span class="title-accent">Especializados</span></h2>
-        <p class="section-subtitle">Soluciones podológicas integrales con enfoque médico y tecnología de punta.</p>
-      </div>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-notes-medical"></i>
-          </div>
-          <h3 class="service-title">Consulta Diagnóstica</h3>
-          <p class="service-description">Valoración clínica detallada que incluye anamnesis, revisión vascular periférica y dermatológica.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Historial Clínico Digital</li>
-            <li><i class="fas fa-check"></i> Exploración Física Completa</li>
-            <li><i class="fas fa-check"></i> Plan Terapéutico</li>
-          </ul>
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Servicios <span class="title-accent">Especializados</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Soluciones podológicas integrales con enfoque médico y tecnología de punta.</p>
         </div>
         
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-feather-alt"></i>
-          </div>
-          <h3 class="service-title">Uñas Encarnadas</h3>
-          <p class="service-description">Tratamiento definitivo de la onicocriptosis. Realizamos espiculotomías con técnica estéril para alivio inmediato.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Procedimiento Indoloro</li>
-            <li><i class="fas fa-check"></i> Prevención de Recidivas</li>
-            <li><i class="fas fa-check"></i> Recuperación Estética</li>
-          </ul>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-spa"></i>
-          </div>
-          <h3 class="service-title">Quiropodia Clínica</h3>
-          <p class="service-description">Deslaminado profesional de hiperqueratosis (callosidades) y helomas. Corte anatómico y fresado terapéutico.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Instrumental Estéril</li>
-            <li><i class="fas fa-check"></i> Descarga de Presiones</li>
-            <li><i class="fas fa-check"></i> Hidratación Profunda</li>
-          </ul>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-virus-slash"></i>
-          </div>
-          <h3 class="service-title">Onicomicosis</h3>
-          <p class="service-description">Protocolo antimicótico combinado. Limpieza mecánica profunda de la lámina ungueal y terapias tópicas.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Recuperación de la Uña</li>
-            <li><i class="fas fa-check"></i> Seguimiento Mensual</li>
-            <li><i class="fas fa-check"></i> Cultivo Micológico</li>
-          </ul>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-user-shield"></i>
-          </div>
-          <h3 class="service-title">Pie Diabético</h3>
-          <p class="service-description">Protocolo clínico de alta seguridad para el pie de riesgo. Monitoreo periódico para evitar complicaciones.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Evaluación Neuro-Vascular</li>
-            <li><i class="fas fa-check"></i> Prevención de Úlceras</li>
-            <li><i class="fas fa-check"></i> Educación Autocuidado</li>
-          </ul>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-shoe-prints"></i>
-          </div>
-          <h3 class="service-title">Ortopodología</h3>
-          <p class="service-description">Diseño de órtesis plantares (plantillas) personalizadas mediante estudio biomecánico para corregir la marcha.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Materiales Termoconformables</li>
-            <li><i class="fas fa-check"></i> Corrección de Ejes</li>
-            <li><i class="fas fa-check"></i> Adaptación a Calzado</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section ubicacion" id="ubicacion">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Nuestra <span class="title-accent">Ubicación</span></h2>
-        <p class="section-subtitle">Instalaciones sanitizadas y de fácil acceso en Toluca</p>
-      </div>
-      
-      <div class="ubicacion-content">
-        <div class="mapa-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120562.19531853696!2d-99.7423985!3d19.2925455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd89892a50ebb9%3A0xad3f4ad5550208c4!2sToluca%2C%20State%20of%20Mexico%2C%20Mexico!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus" 
-            width="100%" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Ubicación de la Clínica Podológica en Toluca">
-          </iframe>
-        </div>
-        
-        <div class="direccion-info">
-          <div class="info-card">
-            <div class="info-icon">
-              <i class="fas fa-map-marker-alt"></i>
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="service-icon">
+              <i class="ti ti-report-medical"></i>
             </div>
-            <div class="info-text">
-              <h4>Dirección</h4>
-              <p>Dirección Prototipo, Toluca, Estado de México.</p>
-            </div>
+            <h3 class="service-title">Consulta Diagnóstica</h3>
+            <p class="service-description">Valoración clínica detallada que incluye anamnesis, revisión vascular periférica y dermatológica.</p>
+            <ul class="service-features">
+              <li><i class="ti ti-circle-check-filled"></i> Historial Clínico Digital</li>
+              <li><i class="ti ti-circle-check-filled"></i> Exploración Física Completa</li>
+              <li><i class="ti ti-circle-check-filled"></i> Plan Terapéutico</li>
+            </ul>
           </div>
           
-          <div class="info-card">
-            <div class="info-icon">
-              <i class="fas fa-clock"></i>
+          <div class="service-card featured reveal">
+            <div class="badge">Más solicitado</div>
+            <div class="service-icon">
+              <i class="ti ti-scooter"></i>
             </div>
-            <div class="info-text">
-              <h4>Horario de Atención</h4>
-              <p>Lun - Vie: 9:00 AM - 8:00 PM</p>
-              <p>Sáb: 9:00 AM - 2:00 PM</p>
-              <p class="info-note">Domingo: Cerrado</p>
-            </div>
+            <h3 class="service-title">Uñas Encarnadas</h3>
+            <p class="service-description">Tratamiento definitivo de la onicocriptosis. Realizamos espiculotomías con técnica estéril para alivio inmediato.</p>
+            <ul class="service-features">
+              <li><i class="ti ti-circle-check-filled"></i> Procedimiento Indoloro</li>
+              <li><i class="ti ti-circle-check-filled"></i> Prevención de Recidivas</li>
+              <li><i class="ti ti-circle-check-filled"></i> Recuperación Estética</li>
+            </ul>
           </div>
           
-          <div class="info-card">
-            <div class="info-icon">
-              <i class="fas fa-phone-alt"></i>
+          <div class="service-card reveal">
+            <div class="service-icon">
+              <i class="ti ti-razor"></i>
             </div>
-            <div class="info-text">
-              <h4>Contacto</h4>
-              <p>Tel: <a href="#" id="phoneLink" style="color: inherit; text-decoration: none;">+52 7211 00 1122</a></p>
-              <p>Email: <a href="#" id="emailLink" style="color: inherit; text-decoration: none;">Consultorio@gmail.com</a></p>
+            <h3 class="service-title">Quiropodia Clínica</h3>
+            <p class="service-description">Deslaminado profesional de hiperqueratosis (callosidades) y helomas. Corte anatómico y fresado terapéutico.</p>
+            <ul class="service-features">
+              <li><i class="ti ti-circle-check-filled"></i> Instrumental Estéril</li>
+              <li><i class="ti ti-circle-check-filled"></i> Descarga de Presiones</li>
+              <li><i class="ti ti-circle-check-filled"></i> Hidratación Profunda</li>
+            </ul>
+          </div>
+          
+          <div class="service-card reveal">
+            <div class="service-icon">
+              <i class="ti ti-microscope"></i>
+            </div>
+            <h3 class="service-title">Onicomicosis</h3>
+            <p class="service-description">Protocolo antimicótico combinado. Limpieza mecánica profunda de la lámina ungueal y terapias tópicas.</p>
+            <ul class="service-features">
+              <li><i class="ti ti-circle-check-filled"></i> Recuperación de la Uña</li>
+              <li><i class="ti ti-circle-check-filled"></i> Seguimiento Mensual</li>
+              <li><i class="ti ti-circle-check-filled"></i> Cultivo Micológico</li>
+            </ul>
+          </div>
+          
+          <div class="service-card featured reveal">
+            <div class="service-icon">
+              <i class="ti ti-shield-check"></i>
+            </div>
+            <h3 class="service-title">Pie Diabético</h3>
+            <p class="service-description">Protocolo clínico de alta seguridad para el pie de riesgo. Monitoreo periódico para evitar complicaciones.</p>
+            <ul class="service-features">
+              <li><i class="ti ti-circle-check-filled"></i> Evaluación Neuro-Vascular</li>
+              <li><i class="ti ti-circle-check-filled"></i> Prevención de Úlceras</li>
+              <li><i class="ti ti-circle-check-filled"></i> Educación Autocuidado</li>
+            </ul>
+          </div>
+          
+          <div class="service-card reveal">
+            <div class="service-icon">
+              <i class="ti ti-shoe"></i>
+            </div>
+            <h3 class="service-title">Ortopodología</h3>
+            <p class="service-description">Diseño de órtesis plantares (plantillas) personalizadas mediante estudio biomecánico para corregir la marcha.</p>
+            <ul class="service-features">
+              <li><i class="ti ti-circle-check-filled"></i> Materiales Termoconformables</li>
+              <li><i class="ti ti-circle-check-filled"></i> Corrección de Ejes</li>
+              <li><i class="ti ti-circle-check-filled"></i> Adaptación a Calzado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ubicacion" id="ubicacion">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Nuestra <span class="title-accent">Ubicación</span></h2>
+          <p class="section-subtitle">Instalaciones sanitizadas y de fácil acceso en Toluca</p>
+        </div>
+        
+        <div class="ubicacion-grid">
+          <div class="map-frame reveal">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120562.19531853696!2d-99.7423985!3d19.2925455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd89892a50ebb9%3A0xad3f4ad5550208c4!2sToluca%2C%20State%20of%20Mexico%2C%20Mexico!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicación de la Clínica Podológica en Toluca">
+            </iframe>
+          </div>
+          
+          <div class="info-grid reveal">
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="ti ti-map-pin"></i>
+              </div>
+              <div class="info-content">
+                <h4>Dirección</h4>
+                <p>Dirección Prototipo, Toluca, Estado de México.</p>
+              </div>
+            </div>
+            
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="ti ti-clock"></i>
+              </div>
+              <div class="info-content">
+                <h4>Horario de Atención</h4>
+                <p>Lun - Vie: 9:00 AM - 8:00 PM</p>
+                <p>Sáb: 9:00 AM - 2:00 PM</p>
+                <p class="info-note">Domingo: Cerrado</p>
+              </div>
+            </div>
+            
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="ti ti-phone"></i>
+              </div>
+              <div class="info-content">
+                <h4>Contacto</h4>
+                <p>Tel: <a href="#" id="phoneLink">+52 7211 00 1122</a></p>
+                <p>Email: <a href="#" id="emailLink">Consultorio@gmail.com</a></p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="footer" id="datos-contacto">
+    <div class="footer-top-glow"></div>
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-column">
+      <div class="footer-grid">
+        <div class="footer-brand">
           <h3 class="footer-logo">Dr. <span>en Podología</span></h3>
           <p class="footer-description">
             Clínica especializada en podología integral. Comprometidos con la excelencia médica y la calidad de vida de nuestros pacientes.
           </p>
           <div class="social-links">
-            <a href="https://facebook.com" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="social-link" aria-label="TikTok"><i class="ti ti-brand-tiktok"></i></a>
           </div>
         </div>
         
-        <div class="footer-column">
+        <div class="footer-nav">
           <h4 class="footer-title">Servicios</h4>
           <ul class="footer-links">
             <li><a href="#servicios">Consulta Diagnóstica</a></li>
@@ -255,7 +257,7 @@
           </ul>
         </div>
         
-        <div class="footer-column">
+        <div class="footer-nav">
           <h4 class="footer-title">Navegación</h4>
           <ul class="footer-links">
             <li><a href="#inicio">Inicio</a></li>
@@ -265,13 +267,25 @@
           </ul>
         </div>
         
-        <div class="footer-column">
+        <div class="footer-contact">
           <h4 class="footer-title">Contacto</h4>
-          <div class="footer-contact">
-            <p><i class="fas fa-map-marker-alt"></i> Toluca, Estado de México</p>
-            <p><i class="fas fa-phone-alt"></i> <a href="tel:+527211001122" style="color: inherit; text-decoration: none;">+52 7211 00 1122</a></p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:Consultorio@gmail.com" style="color: inherit; text-decoration: none;">Consultorio@gmail.com</a></p>
-            <p><i class="fas fa-clock"></i> Cita Previa Requerida</p>
+          <div class="footer-contact-info">
+            <div class="footer-contact-item">
+              <i class="ti ti-map-pin"></i>
+              <p>Toluca, Estado de México</p>
+            </div>
+            <div class="footer-contact-item">
+              <i class="ti ti-phone"></i>
+              <a href="tel:+527211001122">+52 7211 00 1122</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="ti ti-mail"></i>
+              <a href="mailto:Consultorio@gmail.com">Consultorio@gmail.com</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="ti ti-clock"></i>
+              <p>Cita Previa Requerida</p>
+            </div>
           </div>
         </div>
       </div>
@@ -282,10 +296,12 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/527211001122" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" data-wa-number="527211001122" aria-label="Contactar por WhatsApp">
-    <i class="fab fa-whatsapp"></i>
+  <a href="https://wa.me/527211001122" class="whatsapp-float pulse-ring" target="_blank" rel="noopener noreferrer" data-wa-number="527211001122" aria-label="Contactar por WhatsApp">
+    <i class="ti ti-brand-whatsapp"></i>
   </a>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="public/js/main.js"></script>
 </body>
 </html>
