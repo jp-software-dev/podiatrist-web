@@ -1,4 +1,6 @@
 /* Variables Globales */
+
+/* Define la paleta de colores, fuentes, sombras y transiciones del sitio */
 :root {
   --primary: #2d4739;
   --primary-dark: #1a2a22;
@@ -22,22 +24,28 @@
 }
 
 /* Reset y Base */
+
+/* Elimina márgenes y rellenos por defecto en todos los elementos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Habilita el desplazamiento suave y ajusta el margen superior para los enlaces de anclaje */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
 
 /* Custom Scrollbar */
+
+/* Personaliza la barra de desplazamiento del navegador con los colores de la marca */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--bg-cream); }
 ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
+/* Configura la fuente principal, color de fondo, texto y oculta desbordamientos horizontales */
 body {
   font-family: var(--font-body);
   background-color: var(--bg-cream);
@@ -46,12 +54,14 @@ body {
   overflow-x: hidden;
 }
 
+/* Aplica la tipografía de títulos y grosor en negrita a todos los encabezados */
 h1, h2, h3, h4 {
   font-family: var(--font-headers);
   font-weight: 700;
   line-height: 1.2;
 }
 
+/* Contenedor central principal que restringe el ancho máximo y añade márgenes laterales */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -60,6 +70,8 @@ h1, h2, h3, h4 {
 }
 
 /* Header / Navbar */
+
+/* Fija la barra de navegación en la parte superior y la sobrepone al contenido */
 .header {
   position: fixed;
   top: 0;
@@ -70,22 +82,26 @@ h1, h2, h3, h4 {
   transition: var(--transition);
 }
 
+/* Cambia el fondo, reduce el relleno y añade sombra a la barra al hacer scroll */
 .header.scrolled {
   background-color: var(--primary);
   padding: 15px 0;
   box-shadow: var(--shadow-xl);
 }
 
+/* Distribuye el logotipo y el menú a los extremos opuestos de la barra */
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Elimina el subrayado del enlace que envuelve al logotipo */
 .logo-container a {
   text-decoration: none;
 }
 
+/* Configura el tamaño y grosor del texto del logotipo principal */
 .logo {
   font-size: 1.5rem;
   font-weight: 800;
@@ -94,10 +110,12 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
+/* Cambia a color dorado el texto resaltado dentro del logotipo */
 .logo span {
   color: var(--accent);
 }
 
+/* Estiliza el texto secundario debajo del logo con letras pequeñas y mayúsculas */
 .logo-subtitle {
   font-size: 10px;
   color: rgba(255, 255, 255, 0.8);
@@ -107,11 +125,13 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
+/* Organiza los enlaces de navegación en línea con espaciado entre ellos */
 .nav-menu {
   display: flex;
   gap: 40px;
 }
 
+/* Establece el tamaño, grosor y color claro a los enlaces del menú principal */
 .nav-link {
   color: var(--white);
   text-decoration: none;
@@ -121,6 +141,7 @@ h1, h2, h3, h4 {
   transition: var(--transition);
 }
 
+/* Crea la línea decorativa inferior oculta para el efecto hover de los enlaces */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -132,11 +153,13 @@ h1, h2, h3, h4 {
   transition: width 0.3s ease;
 }
 
+/* Muestra la línea inferior dorada al pasar el cursor o cuando la sección está activa */
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
 }
 
+/* Oculta por defecto el botón tipo hamburguesa en pantallas de escritorio */
 .menu-toggle {
   display: none;
   background: none;
@@ -147,6 +170,8 @@ h1, h2, h3, h4 {
 }
 
 /* Hero Section */
+
+/* Configura la sección de portada, su altura y el corte diagonal inferior (clip-path) */
 .hero {
   position: relative;
   height: 100vh;
@@ -158,6 +183,7 @@ h1, h2, h3, h4 {
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
+/* Posiciona el video de fondo en la capa profunda y le da transparencia */
 .hero-video {
   position: absolute;
   top: 0;
@@ -169,6 +195,7 @@ h1, h2, h3, h4 {
   z-index: 0;
 }
 
+/* Agrega un degradado oscuro semitransparente sobre el video para mejorar la lectura */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -177,6 +204,7 @@ h1, h2, h3, h4 {
   z-index: 1;
 }
 
+/* Contenedor relativo que organiza el texto y las estadísticas sobre los fondos */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -186,6 +214,7 @@ h1, h2, h3, h4 {
   width: 100%;
 }
 
+/* En pantallas grandes, separa el texto a la izquierda y las estadísticas a la derecha */
 @media (min-width: 1024px) {
   .hero-content {
     flex-direction: row;
@@ -194,17 +223,20 @@ h1, h2, h3, h4 {
   }
 }
 
+/* Limita el ancho del texto y lo centra en pantallas medianas y pequeñas */
 .hero-text-content {
   max-width: 700px;
   text-align: center;
 }
 
+/* Alinea el texto de la portada a la izquierda en pantallas de escritorio */
 @media (min-width: 1024px) {
   .hero-text-content {
     text-align: left;
   }
 }
 
+/* Ajusta el título de bienvenida a un tamaño adaptable y lo oculta para animarlo */
 .hero-title {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   color: var(--white);
@@ -213,10 +245,12 @@ h1, h2, h3, h4 {
   transform: translateY(40px);
 }
 
+/* Aplica el color de acento a los fragmentos de texto resaltados en el título */
 .hero-title span {
   color: var(--accent);
 }
 
+/* Define la tipografía fina y semitransparente para la descripción de portada */
 .hero-subtitle {
   font-size: 1.15rem;
   color: rgba(255, 255, 255, 0.9);
@@ -225,6 +259,7 @@ h1, h2, h3, h4 {
   transform: translateY(40px);
 }
 
+/* Centra los botones de acción iniciales y los prepara para animación */
 .hero-buttons {
   display: flex;
   gap: 20px;
@@ -233,12 +268,14 @@ h1, h2, h3, h4 {
   transform: translateY(40px);
 }
 
+/* Alinea los botones de la portada a la izquierda en pantallas de escritorio */
 @media (min-width: 1024px) {
   .hero-buttons {
     justify-content: flex-start;
   }
 }
 
+/* Configura la estructura base, relleno, curvatura y transiciones de cualquier botón */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -252,16 +289,19 @@ h1, h2, h3, h4 {
   border: none;
 }
 
+/* Estilo para el botón principal con fondo dorado y texto blanco */
 .btn-primary {
   background-color: var(--accent);
   color: var(--white);
 }
 
+/* Eleva el botón principal y le añade un halo de sombra al interactuar */
 .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-accent);
 }
 
+/* Estilo para botones secundarios, sin fondo y con un contorno de línea clara */
 .btn-secondary {
   border: 2px solid var(--white);
   color: var(--white);
@@ -271,6 +311,7 @@ h1, h2, h3, h4 {
   z-index: 1;
 }
 
+/* Crea un fondo blanco deslizable oculto a la izquierda para el hover del botón secundario */
 .btn-secondary::before {
   content: '';
   position: absolute;
@@ -283,15 +324,19 @@ h1, h2, h3, h4 {
   z-index: -1;
 }
 
+/* Oscurece el texto del botón secundario cuando se activa su efecto hover */
 .btn-secondary:hover {
   color: var(--primary);
 }
 
+/* Desliza el fondo blanco para cubrir el botón secundario al pasar el cursor */
 .btn-secondary:hover::before {
   left: 0;
 }
 
 /* Stats Cards (Glassmorphism) */
+
+/* Contenedor de las cajas de estadísticas, alineadas en columna y preparadas para animación */
 .hero-stats {
   display: flex;
   flex-direction: column;
@@ -303,12 +348,14 @@ h1, h2, h3, h4 {
   transform: translateX(40px);
 }
 
+/* Remueve el centrado automático en escritorio para encajar del lado derecho */
 @media (min-width: 1024px) {
   .hero-stats {
     margin: 0;
   }
 }
 
+/* Estilo de tarjeta de vidrio esmerilado con fondo semitransparente y bordes sutiles */
 .stat-card {
   background: var(--glass-bg);
   -webkit-backdrop-filter: blur(16px);
@@ -323,11 +370,13 @@ h1, h2, h3, h4 {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
 }
 
+/* Aumenta el tamaño y la luminosidad de la tarjeta de estadística al pasar el cursor */
 .stat-card:hover {
   transform: scale(1.05);
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* Formatea el texto de la etiqueta (ej. "Pacientes") en mayúsculas pequeñas */
 .stat-label {
   font-size: 0.75rem;
   font-weight: 700;
@@ -336,6 +385,7 @@ h1, h2, h3, h4 {
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* Da tamaño grande y color dorado a los números de la estadística */
 .stat-number {
   font-size: 1.85rem;
   font-weight: 800;
@@ -343,25 +393,31 @@ h1, h2, h3, h4 {
 }
 
 /* Servicios Section */
+
+/* Añade espaciado superior e inferior para separar cada bloque principal de la página */
 .section {
   padding: 100px 0;
 }
 
+/* Centra el texto del encabezado de la sección y da margen inferior */
 .section-header {
   text-align: center;
   margin-bottom: 80px;
 }
 
+/* Define el tamaño responsivo y color oscuro para los títulos de sección */
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--primary);
   margin-bottom: 16px;
 }
 
+/* Clase de utilidad para colorear de dorado palabras específicas en los títulos */
 .title-accent {
   color: var(--accent);
 }
 
+/* Pequeña línea dorada separadora utilizada debajo del título de la sección */
 .section-divider {
   width: 80px;
   height: 4px;
@@ -369,6 +425,7 @@ h1, h2, h3, h4 {
   margin: 0 auto 24px;
 }
 
+/* Limita el ancho del subtítulo de la sección y lo centra debajo del título */
 .section-subtitle {
   font-size: 1.1rem;
   color: var(--text-light);
@@ -376,12 +433,14 @@ h1, h2, h3, h4 {
   margin: 0 auto;
 }
 
+/* Crea una cuadrícula responsiva para las tarjetas de servicios adaptándose al espacio */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 32px;
 }
 
+/* Estilo claro y con un sutil degradado para las tarjetas de servicios base */
 .service-card {
   background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(254,250,224,0.5) 100%);
   padding: 40px;
@@ -392,11 +451,13 @@ h1, h2, h3, h4 {
   flex-direction: column;
 }
 
+/* Eleva la tarjeta y genera una sombra de color para destacar el elemento al pasar el cursor */
 .service-card:hover {
   transform: translateY(-12px);
   box-shadow: 0 30px 60px -12px rgba(45, 71, 57, 0.15);
 }
 
+/* Estiliza la caja que contiene el ícono de cada servicio dándole fondo verde oscuro */
 .service-icon {
   width: 64px;
   height: 64px;
@@ -411,10 +472,12 @@ h1, h2, h3, h4 {
   transition: var(--transition);
 }
 
+/* Rota ligeramente el ícono cuando el usuario hace hover en la tarjeta del servicio */
 .service-card:hover .service-icon {
   transform: rotate(12deg);
 }
 
+/* Invierte los colores a fondo oscuro y texto claro para resaltar el servicio principal */
 .service-card.featured {
   background-color: var(--primary);
   border: 4px solid var(--accent);
@@ -423,20 +486,24 @@ h1, h2, h3, h4 {
   background-image: none;
 }
 
+/* Fuerza color blanco en el título de la tarjeta destacada */
 .service-card.featured .service-title {
   color: var(--white);
 }
 
+/* Aclara la descripción y las características dentro de la tarjeta destacada */
 .service-card.featured .service-description,
 .service-card.featured .service-features li {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Cambia los colores del ícono en la tarjeta destacada (fondo translúcido, ícono dorado) */
 .service-card.featured .service-icon {
   background: rgba(255, 255, 255, 0.1);
   color: var(--accent);
 }
 
+/* Pequeña etiqueta flotante dorada en la esquina de tarjetas especiales */
 .badge {
   position: absolute;
   top: 16px;
@@ -451,22 +518,26 @@ h1, h2, h3, h4 {
   letter-spacing: 1px;
 }
 
+/* Da tamaño grande y color verde oscuro al nombre de cada tratamiento */
 .service-title {
   font-size: 1.5rem;
   margin-bottom: 16px;
   color: var(--primary);
 }
 
+/* Estiliza la explicación textual del tratamiento haciéndola flexible */
 .service-description {
   color: var(--text-light);
   margin-bottom: 32px;
   flex-grow: 1;
 }
 
+/* Quita las viñetas por defecto de la lista de detalles del servicio */
 .service-features {
   list-style: none;
 }
 
+/* Organiza los elementos de la lista en filas y estandariza su fuente */
 .service-features li {
   display: flex;
   align-items: center;
@@ -477,18 +548,22 @@ h1, h2, h3, h4 {
   color: rgba(26, 42, 34, 0.8);
 }
 
+/* Pinta de color dorado las palomitas o viñetas de las listas de servicio */
 .service-features i {
   color: var(--accent);
   font-size: 1.25rem;
 }
 
 /* Ubicación Section */
+
+/* Aplica un fondo blanco y corta el borde superior en diagonal */
 .ubicacion {
   background-color: var(--white);
   clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
   padding-top: 160px;
 }
 
+/* Muestra el mapa y los datos en una sola columna en móviles */
 .ubicacion-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -496,12 +571,14 @@ h1, h2, h3, h4 {
   align-items: center;
 }
 
+/* Divide en dos columnas asimétricas el mapa y la info en pantallas grandes */
 @media (min-width: 1024px) {
   .ubicacion-grid {
     grid-template-columns: 1.2fr 0.8fr;
   }
 }
 
+/* Contenedor que recorta los bordes rectos de iframe del mapa y añade sombra */
 .map-frame {
   border-radius: 40px;
   overflow: hidden;
@@ -509,17 +586,20 @@ h1, h2, h3, h4 {
   height: 500px;
 }
 
+/* Asegura que el iframe de Google Maps cubra todo el contenedor */
 .map-frame iframe {
   width: 100%;
   height: 100%;
   border: 0;
 }
 
+/* Apila verticalmente las tarjetas de contacto e información (horarios, dirección) */
 .info-grid {
   display: grid;
   gap: 24px;
 }
 
+/* Define el recuadro verde oscuro para los bloques de información individual */
 .info-card {
   background-color: var(--primary);
   padding: 32px;
@@ -530,10 +610,12 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-md);
 }
 
+/* Desplaza ligeramente la tarjeta de información hacia la derecha al interactuar */
 .info-card:hover {
   transform: translateX(10px);
 }
 
+/* Caja translúcida interna para el ícono de contacto dentro de la tarjeta info */
 .info-icon {
   width: 56px;
   height: 56px;
@@ -547,23 +629,27 @@ h1, h2, h3, h4 {
   flex-shrink: 0;
 }
 
+/* Tamaño de texto claro para los subtítulos de las tarjetas (Ej. "Ubicación") */
 .info-content h4 {
   color: var(--white);
   margin-bottom: 8px;
   font-size: 1.25rem;
 }
 
+/* Párrafo semitransparente para el texto descriptivo de los bloques de contacto */
 .info-content p {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.95rem;
   margin: 0;
 }
 
+/* Remueve decoraciones en los enlaces (ej. teléfonos, correos) dentro de la info */
 .info-content a {
   color: var(--white);
   text-decoration: none;
 }
 
+/* Clase forzada para resaltar pequeñas anotaciones doradas en la info (ej. "Sólo citas") */
 .info-note {
   color: var(--accent) !important;
   font-size: 0.7rem !important;
@@ -574,6 +660,8 @@ h1, h2, h3, h4 {
 }
 
 /* Footer */
+
+/* Configura el fondo más oscuro para el pie de página global */
 .footer {
   background-color: var(--primary-dark);
   color: var(--white);
@@ -581,6 +669,7 @@ h1, h2, h3, h4 {
   position: relative;
 }
 
+/* Línea luminosa decorativa que cruza toda la parte superior del pie de página */
 .footer-top-glow {
   position: absolute;
   top: 0;
@@ -591,6 +680,7 @@ h1, h2, h3, h4 {
   box-shadow: 0 0 15px rgba(212, 167, 98, 0.5);
 }
 
+/* Divide el pie de página en columnas flexibles que se adaptan al ancho */
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -598,12 +688,14 @@ h1, h2, h3, h4 {
   margin-bottom: 80px;
 }
 
+/* Fija una cuadrícula de cuatro columnas con proporciones específicas para PC */
 @media (min-width: 1024px) {
   .footer-grid {
     grid-template-columns: 1.5fr 0.8fr 0.8fr 1fr;
   }
 }
 
+/* Tipografía de tamaño grande reservada para el logo final del sitio */
 .footer-logo {
   font-size: 1.85rem;
   font-weight: 800;
@@ -611,21 +703,25 @@ h1, h2, h3, h4 {
   letter-spacing: 1px;
 }
 
+/* Aplica color dorado al detalle resaltado del logo en el footer */
 .footer-logo span {
   color: var(--accent);
 }
 
+/* Configura el texto descriptivo corto sobre la clínica en la primera columna */
 .footer-description {
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.8;
   margin-bottom: 32px;
 }
 
+/* Agrupa en línea horizontal los distintos íconos para redes sociales */
 .social-links {
   display: flex;
   gap: 16px;
 }
 
+/* Construye la forma circular semitransparente que delimita los íconos de redes */
 .social-link {
   width: 40px;
   height: 40px;
@@ -639,11 +735,13 @@ h1, h2, h3, h4 {
   transition: var(--transition);
 }
 
+/* Colorea la burbuja de red social a dorado y la agranda al interactuar */
 .social-link:hover {
   background-color: var(--accent);
   transform: translateY(-5px) scale(1.1);
 }
 
+/* Aplica un formato de título pequeño en mayúsculas a cada columna (ej. "Enlaces") */
 .footer-title {
   font-size: 0.7rem;
   font-weight: 800;
@@ -653,14 +751,17 @@ h1, h2, h3, h4 {
   margin-bottom: 32px;
 }
 
+/* Elimina viñetas en la lista de hipervínculos del pie de página */
 .footer-links {
   list-style: none;
 }
 
+/* Genera espaciado vertical entre cada enlace de las listas del footer */
 .footer-links li {
   margin-bottom: 16px;
 }
 
+/* Formatea el color y elimina decoraciones del texto en hipervínculos del footer */
 .footer-links a {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
@@ -668,27 +769,32 @@ h1, h2, h3, h4 {
   transition: var(--transition);
 }
 
+/* Ilumina a color dorado el texto del enlace inferior al pasar el cursor */
 .footer-links a:hover {
   color: var(--accent);
 }
 
+/* Agrupa la información de la última columna de contactos para apilarla */
 .footer-contact-info {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
+/* Crea una fila para colocar un ícono de contacto a un lado del texto descriptivo */
 .footer-contact-item {
   display: flex;
   gap: 16px;
 }
 
+/* Colorea y separa ligeramente el pequeño ícono usado en la lista de contactos */
 .footer-contact-item i {
   color: var(--accent);
   font-size: 1.25rem;
   margin-top: 4px;
 }
 
+/* Estiliza los textos genéricos o enlaces telefónicos de la columna de contactos */
 .footer-contact-item p,
 .footer-contact-item a {
   color: rgba(255, 255, 255, 0.6);
@@ -697,12 +803,14 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
+/* Añade un sutil borde superior que separa los derechos de autor de las columnas */
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 40px;
   text-align: center;
 }
 
+/* Estilo de letra minúscula de aviso legal centrado para los derechos de autor */
 .footer-bottom p {
   font-size: 0.7rem;
   color: rgba(255, 255, 255, 0.3);
@@ -712,6 +820,8 @@ h1, h2, h3, h4 {
 }
 
 /* Floating WhatsApp */
+
+/* Estiliza y fija el botón en la esquina inferior derecha con colores oficiales */
 .whatsapp-float {
   position: fixed;
   bottom: 40px;
@@ -730,10 +840,12 @@ h1, h2, h3, h4 {
   box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
 }
 
+/* Clase de utilidad para aplicar la animación de pulsación infinita al botón */
 .pulse-ring {
   animation: pulse 2s infinite;
 }
 
+/* Fotogramas clave para crear la ilusión de latidos verdes alrededor de WhatsApp */
 @keyframes pulse {
   0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
   70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
@@ -741,14 +853,21 @@ h1, h2, h3, h4 {
 }
 
 /* Scroll reveal utility */
+
+/* Estado inicial invisible y desplazado hacia abajo para elementos a revelar */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
 }
 
 /* Responsive Mobile Nav */
+
+/* Adaptaciones especiales para pantallas pequeñas (móviles y tabletas menores a 768px) */
 @media (max-width: 768px) {
+  /* Reduce relleno del header para liberar espacio arriba */
   .header { padding: 20px 0; }
+  
+  /* Esconde el menú de PC y lo convierte en un panel derecho desplazable */
   .nav-menu {
     position: fixed;
     top: 0;
@@ -760,17 +879,34 @@ h1, h2, h3, h4 {
     padding: 100px 40px;
     transition: var(--transition);
   }
+  
+  /* Clase activa que desliza el panel lateral de navegación a la vista */
   .nav-menu.active { right: 0; }
+  
+  /* Muestra el botón de hamburguesa y lo coloca encima del panel */
   .menu-toggle { display: block; z-index: 1001; }
   
+  /* Reduce la altura mínima y modifica ligeramente el corte diagonal en móviles */
   .hero { min-height: 700px; clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%); }
-  .hero-title { font-size: 2.5rem; }
+  
+  /* AÑADIDO (MEJORA): Aumentamos considerablemente el margen superior del título para separarlo definitivamente del header */
+  .hero-title { font-size: 2.5rem; margin-top: 100px; }
+  
+  /* Ajusta tamaño del subtítulo para evitar saltos de línea extremos */
   .hero-subtitle { font-size: 1rem; }
   
+  /* Disminuye padding de las secciones en general */
   .section { padding: 60px 0; }
+  
+  /* Modifica el relleno top y ajusta el corte diagonal de la sección mapa */
   .ubicacion { padding-top: 100px; clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%); }
+  
+  /* Recorta la altura del iframe del mapa para pantallas móviles */
   .map-frame { height: 350px; }
   
+  /* Adelgaza el espacio interior de los botones ovalados de las estadísticas */
   .stat-card { padding: 12px 24px; }
+  
+  /* Reduce los dígitos de estadísticas para que entren correctamente */
   .stat-number { font-size: 1.5rem; }
 }

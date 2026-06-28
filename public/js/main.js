@@ -1,37 +1,38 @@
-// Inicializa la aplicación cuando el DOM está completamente cargado y analizado
+/* Inicializa la aplicación cuando el DOM está completamente cargado y analizado */
 document.addEventListener('DOMContentLoaded', () => {
-    // 1Inicializa las animaciones de GSAP y los plugins de ScrollTrigger si están disponibles
+    
+    /* Inicializa las animaciones de GSAP y los plugins de ScrollTrigger si están disponibles */
     if (typeof gsap !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
         initAnimations();
     }
 
-    // Adjunta el listener de scroll para la gestión del estado del header
+    /* Adjunta el listener de scroll para la gestión del estado del header */
     initHeaderScroll();
 
-    // Configura las interacciones de navegación móvil
+    /* Configura las interacciones de navegación móvil */
     initMobileMenu();
 
-    // Sanitiza y formatea el enlace de integración de WhatsApp
+    /* Sanitiza y formatea el enlace de integración de WhatsApp */
     sanitizeWhatsAppLink();
 
-    // Inicializa el scroll spy para el resaltado dinámico de la navegación
+    /* Inicializa el scroll spy para el resaltado dinámico de la navegación */
     initScrollSpy();
 
-    // Aplica la protección de contenido y anulaciones de enlaces de contacto
+    /* Aplica la protección de contenido y anulaciones de enlaces de contacto */
     initContactProtections();
 
-    // Inicializa el script de monitoreo de DevTools
+    /* Inicializa el script de monitoreo de DevTools */
     detectDevTools();
 
-    // Inyecta dinámicamente el año actual en el copyright del pie de página
+    /* Inyecta dinámicamente el año actual en el copyright del pie de página */
     const yearEl = document.getElementById('currentYear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
 
-// Orquesta las líneas de tiempo de GSAP para la sección hero y las revelaciones al hacer scroll
+/* Orquesta las líneas de tiempo de GSAP para la sección hero y las revelaciones al hacer scroll */
 function initAnimations() {
-    // Sección Hero: Línea de tiempo de entrada escalonada
+    /* Sección Hero: Línea de tiempo de entrada escalonada para títulos y estadísticas */
     const heroTl = gsap.timeline();
     
     heroTl.to('.hero-title', { opacity: 1, y: 0, duration: 1.2, ease: 'power4.out' })
@@ -39,7 +40,7 @@ function initAnimations() {
           .to('.hero-buttons', { opacity: 1, y: 0, duration: 1, ease: 'power4.out' }, '-=0.8')
           .to('.hero-stats', { opacity: 1, x: 0, duration: 1.2, ease: 'power4.out' }, '-=1');
 
-    // Revelación de contenido: Adjunta ScrollTrigger a todos los elementos con la clase '.reveal'
+    /* Revelación de contenido: Adjunta ScrollTrigger a todos los elementos con la clase '.reveal' */
     const reveals = document.querySelectorAll('.reveal');
     reveals.forEach((el) => {
         gsap.to(el, {
@@ -55,7 +56,7 @@ function initAnimations() {
     });
 }
 
-// Alterna el estilo del fondo del header basado en la profundidad de la posición del scroll
+/* Alterna el estilo del fondo del header basado en la profundidad de la posición del scroll */
 function initHeaderScroll() {
     const header = document.querySelector('.header');
     
@@ -67,12 +68,12 @@ function initHeaderScroll() {
         }
     };
 
-    // Escucha los eventos de scroll y ejecuta la comprobación inicial
+    /* Escucha los eventos de scroll y ejecuta la comprobación inicial */
     window.addEventListener('scroll', handleScroll);
     handleScroll(); 
 }
 
-// Gestiona el estado del menú hamburguesa móvil y la alternancia del icono
+/* Gestiona el estado del menú hamburguesa móvil y la alternancia del icono */
 function initMobileMenu() {
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
@@ -80,7 +81,7 @@ function initMobileMenu() {
     const icon = menuToggle?.querySelector('i');
 
     if (menuToggle && navMenu) {
-        // Alterna los estados del menú y del icono al hacer clic en el botón
+        /* Alterna los estados del panel lateral y cambia a ícono X al hacer clic */
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             if (icon) {
@@ -89,7 +90,7 @@ function initMobileMenu() {
             }
         });
 
-        // Cierra automáticamente el menú cuando se hace clic en un enlace de navegación
+        /* Cierra automáticamente el menú móvil cuando se hace clic en un enlace a otra sección */
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -102,21 +103,21 @@ function initMobileMenu() {
     }
 }
 
-// Limpia los caracteres no numéricos del atributo de datos sin procesar para construir una URL de WhatsApp válida
+/* Limpia los caracteres no numéricos del dataset sin procesar para construir URL de WhatsApp válida */
 function sanitizeWhatsAppLink() {
     const waBtn = document.querySelector('.whatsapp-float');
     if (waBtn && waBtn.dataset.waNumber) {
         const rawNumber = waBtn.dataset.waNumber;
         const sanitized = rawNumber.replace(/\D/g, ''); 
         
-        // Asegura una longitud de número de teléfono válida antes de aplicar el href
+        /* Asegura una longitud de teléfono válida antes de aplicar el href definitivo */
         if (sanitized.length >= 10 && sanitized.length <= 15) {
             waBtn.href = `https://wa.me/${sanitized}`;
         }
     }
 }
 
-// Observa las secciones activas en la ventana para resaltar los enlaces de la barra de navegación correspondientes
+/* Observa las secciones visibles para resaltar los enlaces de la barra de navegación correspondientes */
 function initScrollSpy() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -124,16 +125,16 @@ function initScrollSpy() {
     window.addEventListener('scroll', () => {
         let current = '';
         
-        // Determina qué sección está actualmente a la vista
+        /* Determina qué sección está actualmente cruzando el umbral de la pantalla */
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            // Lógica de compensación (150px) para activar el espía justo antes de que la sección llegue a la parte superior
+            /* Lógica de compensación para activar el menú antes de llegar hasta arriba */
             if (window.pageYOffset >= sectionTop - 150) {
                 current = section.getAttribute('id');
             }
         });
 
-        // Actualiza la clase activa en los elementos de navegación coincidentes
+        /* Borra estado activo previo y marca el enlace asociado al ID actual detectado */
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href').includes(current)) {
@@ -143,12 +144,12 @@ function initScrollSpy() {
     });
 }
 
-// Maneja el enrutamiento explícito para los datos de contacto y aplica disuasivos básicos contra la extracción de contenido
+/* Maneja el enrutamiento semántico y aplica disuasivos básicos contra copiado de contenido */
 function initContactProtections() {
-    // Intercepta eventos de clic para el enrutamiento semántico de contactos
     const phoneLink = document.getElementById('phoneLink');
     const emailLink = document.getElementById('emailLink');
 
+    /* Intercepta eventos de clic para disparar llamadas sin revelar la etiqueta base a bots simples */
     if (phoneLink) {
         phoneLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -156,6 +157,7 @@ function initContactProtections() {
         });
     }
 
+    /* Intercepta eventos para abrir aplicación de correos predeterminada */
     if (emailLink) {
         emailLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -163,7 +165,7 @@ function initContactProtections() {
         });
     }
 
-    // Añade la atribución de la fuente a los datos copiados al portapapeles que excedan los 20 caracteres
+    /* Añade la atribución "Fuente:" a los datos copiados al portapapeles grandes */
     document.addEventListener('copy', (e) => {
         const selection = window.getSelection().toString();
         if (selection.length > 20) {
@@ -172,7 +174,7 @@ function initContactProtections() {
         }
     });
 
-    // Desactiva el menú contextual nativo (clic derecho) en elementos críticos de la interfaz
+    /* Desactiva el menú nativo (clic derecho) para dificultar descarga de imágenes de interfaz */
     document.querySelectorAll('.service-card, .info-card, .hero').forEach(el => {
         el.addEventListener('contextmenu', (e) => {
             e.preventDefault();
@@ -181,12 +183,12 @@ function initContactProtections() {
     });
 }
 
-// Mecanismo de sondeo para detectar si Chrome/Edge DevTools está abierto mediante la ejecución de un getter de objeto
+/* Mecanismo de sondeo usando getters para detectar si la consola DevTools está siendo ejecutada */
 function detectDevTools() {
     let devToolsOpen = false;
     const element = new Image();
     
-    // El getter se dispara cuando la consola intenta evaluar/renderizar el objeto
+    /* El getter se dispara cuando el navegador renderiza el objeto oculto en la consola */
     Object.defineProperty(element, 'id', {
         get: function() {
             devToolsOpen = true;
@@ -195,13 +197,13 @@ function detectDevTools() {
         }
     });
     
-    // Comprobación de intervalo cada segundo
+    /* Comprobación de intervalo cada segundo limpiando consola para reactivar lectura */
     setInterval(() => {
         devToolsOpen = false;
         console.log(element);
         console.clear();
         
-        // Inyecta una superposición de advertencia visual en el DOM si DevTools está activo
+        /* Inyecta una superposición de advertencia en el DOM si el panel de desarrollador está activo */
         if (devToolsOpen) {
             const warningDiv = document.createElement('div');
             warningDiv.style.cssText = 'position:fixed; bottom:10px; right:10px; background:#ff9800; color:#000; padding:5px 10px; font-size:12px; border-radius:5px; z-index:9999; font-family:monospace; opacity:0.7; pointer-events:none;';
