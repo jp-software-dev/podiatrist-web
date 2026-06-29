@@ -236,13 +236,11 @@ h1, h2, h3, h4 {
   }
 }
 
-/* Ajusta el título de bienvenida a un tamaño adaptable y lo oculta para animarlo */
+/* Ajusta el título de bienvenida a un tamaño adaptable */
 .hero-title {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   color: var(--white);
   margin-bottom: 24px;
-  opacity: 0;
-  transform: translateY(40px);
 }
 
 /* Aplica el color de acento a los fragmentos de texto resaltados en el título */
@@ -255,17 +253,13 @@ h1, h2, h3, h4 {
   font-size: 1.15rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 40px;
-  opacity: 0;
-  transform: translateY(40px);
 }
 
-/* Centra los botones de acción iniciales y los prepara para animación */
+/* Centra los botones de acción iniciales */
 .hero-buttons {
   display: flex;
   gap: 20px;
   justify-content: center;
-  opacity: 0;
-  transform: translateY(40px);
 }
 
 /* Alinea los botones de la portada a la izquierda en pantallas de escritorio */
@@ -336,7 +330,7 @@ h1, h2, h3, h4 {
 
 /* Stats Cards (Glassmorphism) */
 
-/* Contenedor de las cajas de estadísticas, alineadas en columna y preparadas para animación */
+/* Contenedor de las cajas de estadísticas, alineadas en columna */
 .hero-stats {
   display: flex;
   flex-direction: column;
@@ -344,8 +338,6 @@ h1, h2, h3, h4 {
   width: 100%;
   max-width: 320px;
   margin: 0 auto;
-  opacity: 0;
-  transform: translateX(40px);
 }
 
 /* Remueve el centrado automático en escritorio para encajar del lado derecho */
@@ -854,10 +846,10 @@ h1, h2, h3, h4 {
 
 /* Scroll reveal utility */
 
-/* Estado inicial invisible y desplazado hacia abajo para elementos a revelar */
+/* Elementos a revelar ahora aparecen instantáneamente */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: none;
 }
 
 /* Responsive Mobile Nav */
@@ -886,8 +878,8 @@ h1, h2, h3, h4 {
   /* Muestra el botón de hamburguesa y lo coloca encima del panel */
   .menu-toggle { display: block; z-index: 1001; }
   
-  /* Reduce la altura mínima y modifica ligeramente el corte diagonal en móviles */
-  .hero { min-height: 700px; clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%); }
+  /* Ajusta la altura y añade relleno inferior para evitar que se corte la sección de satisfacción */
+  .hero { height: auto; min-height: 850px; padding-bottom: 100px; clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); }
   
   /* AÑADIDO (MEJORA): Aumentamos considerablemente el margen superior del título para separarlo definitivamente del header */
   .hero-title { font-size: 2.5rem; margin-top: 100px; }
