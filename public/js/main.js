@@ -100,6 +100,17 @@ function initMobileMenu() {
                 }
             });
         });
+
+        /* Cierra el menú automáticamente cuando el usuario hace scroll */
+        window.addEventListener('scroll', () => {
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                if (icon) {
+                    icon.classList.add('ti-menu-2');
+                    icon.classList.remove('ti-x');
+                }
+            }
+        });
     }
 }
 
