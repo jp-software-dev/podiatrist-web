@@ -864,11 +864,14 @@ h1, h2, h3, h4 {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 60%;
     height: 100vh;
-    background-color: var(--primary);
+    background-color: rgba(45, 71, 57, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     flex-direction: column;
-    padding: 100px 40px;
+    padding: 100px 30px;
+    gap: 60px;
     transition: var(--transition);
   }
   
