@@ -1,3 +1,6 @@
+/* --- CONFIGURACIÓN GLOBAL --- */
+const CONTACT_PHONE_NUMBER = '+527298369274';
+
 /* Inicializa la aplicación cuando el DOM está completamente cargado y analizado */
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -117,13 +120,14 @@ function initMobileMenu() {
 /* Limpia los caracteres no numéricos del dataset sin procesar para construir URL de WhatsApp válida */
 function sanitizeWhatsAppLink() {
     const waBtn = document.querySelector('.whatsapp-float');
-    if (waBtn && waBtn.dataset.waNumber) {
-        const rawNumber = waBtn.dataset.waNumber;
-        const sanitized = rawNumber.replace(/\D/g, ''); 
+    if (waBtn) {
+        const sanitized = CONTACT_PHONE_NUMBER.replace(/\D/g, '');
         
         /* Asegura una longitud de teléfono válida antes de aplicar el href definitivo */
         if (sanitized.length >= 10 && sanitized.length <= 15) {
-            waBtn.href = `https://wa.me/${sanitized}`;
+            const message = "Hola, Dr. Me gustaría agendar una cita. ¿Podría informarme sobre su disponibilidad?";
+            const encodedMessage = encodeURIComponent(message);
+            waBtn.href = `https://wa.me/${sanitized}?text=${encodedMessage}`;
         }
     }
 }
@@ -164,7 +168,7 @@ function initContactProtections() {
     if (phoneLink) {
         phoneLink.addEventListener('click', (e) => {
             e.preventDefault();
-            window.location.href = 'tel:+527211001122';
+            window.location.href = `tel:${CONTACT_PHONE_NUMBER}`;
         });
     }
 
