@@ -153,13 +153,12 @@ function initMobileMenu() {
 function sanitizeWhatsAppLink() {
     const waBtn = document.querySelector('.whatsapp-float');
     if (waBtn) {
-        const sanitized = CONTACT_PHONE_NUMBER.replace(/\D/g, '');
+        const floatingButtonNumber = '+52 729 836 9274';
+        const sanitized = floatingButtonNumber.replace(/\D/g, '');
         
         if (sanitized.length >= 10 && sanitized.length <= 15) {
             /* Si hay un número válido, configura el enlace a WhatsApp */
-            const message = "Hola, Dr. Me gustaría agendar una cita. ¿Podría informarme sobre su disponibilidad?";
-            const encodedMessage = encodeURIComponent(message);
-            waBtn.href = `https://wa.me/${sanitized}?text=${encodedMessage}`;
+            waBtn.href = `https://wa.me/${sanitized}`;
             waBtn.setAttribute('target', '_blank');
             waBtn.setAttribute('rel', 'noopener noreferrer');
             waBtn.setAttribute('aria-label', 'Contactar por WhatsApp');
