@@ -1,5 +1,5 @@
 /* --- CONFIGURACIÓN GLOBAL --- */
-const CONTACT_PHONE_NUMBER = '+527298369274';
+const CONTACT_PHONE_NUMBER = 'TU-NUMERO-DE-CONTACTO';
 
 /* Inicializa la aplicación cuando el DOM está completamente cargado y analizado */
 document.addEventListener('DOMContentLoaded', () => {
@@ -155,11 +155,20 @@ function sanitizeWhatsAppLink() {
     if (waBtn) {
         const sanitized = CONTACT_PHONE_NUMBER.replace(/\D/g, '');
         
-        /* Asegura una longitud de teléfono válida antes de aplicar el href definitivo */
         if (sanitized.length >= 10 && sanitized.length <= 15) {
+            /* Si hay un número válido, configura el enlace a WhatsApp */
             const message = "Hola, Dr. Me gustaría agendar una cita. ¿Podría informarme sobre su disponibilidad?";
             const encodedMessage = encodeURIComponent(message);
             waBtn.href = `https://wa.me/${sanitized}?text=${encodedMessage}`;
+            waBtn.setAttribute('target', '_blank');
+            waBtn.setAttribute('rel', 'noopener noreferrer');
+            waBtn.setAttribute('aria-label', 'Contactar por WhatsApp');
+        } else {
+            /* Si no hay número, el botón lleva a la sección de contacto */
+            waBtn.href = '#contacto';
+            waBtn.removeAttribute('target');
+            waBtn.removeAttribute('rel');
+            waBtn.setAttribute('aria-label', 'Ir a la sección de contacto');
         }
     }
 }
@@ -199,8 +208,12 @@ function initContactProtections() {
     /* Intercepta eventos de clic para disparar llamadas sin revelar la etiqueta base a bots simples */
     if (phoneLink) {
         phoneLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.location.href = `tel:${CONTACT_PHONE_NUMBER}`;
+            const sanitized = CONTACT_PHONE_NUMBER.replace(/\D/g, '');
+            if (sanitized.length >= 10 && sanitized.length <= 15) {
+                e.preventDefault();
+                window.location.href = `tel:${CONTACT_PHONE_NUMBER}`;
+            }
+            /* Si no es un número válido, no hace nada y permite que el enlace href="#contacto" funcione */
         });
     }
 
@@ -208,7 +221,7 @@ function initContactProtections() {
     if (emailLink) {
         emailLink.addEventListener('click', (e) => {
             e.preventDefault();
-            window.location.href = 'mailto:Consultorio@gmail.com';
+            window.location.href = 'mailto:contacto@tudominio.com';
         });
     }
 
