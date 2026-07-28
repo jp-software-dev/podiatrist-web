@@ -29,4 +29,4 @@ Follow these steps to deploy the project locally:
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/jp-software-dev/podiatrist-web.git](https://github.com/jp-software-dev/podiatrist-web.git)
+   git clone https://github.com/jp-software-dev/podiatrist-web.git
