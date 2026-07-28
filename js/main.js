@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Adjunta el listener de scroll para la gestión del estado del header */
     initHeaderScroll();
 
+    /* Habilita el desplazamiento suave hacia las secciones al hacer clic en enlaces internos */
+    initSmoothScroll();
+
     /* Configura las interacciones de navegación móvil */
     initMobileMenu();
 
@@ -74,6 +77,35 @@ function initHeaderScroll() {
     /* Escucha los eventos de scroll y ejecuta la comprobación inicial */
     window.addEventListener('scroll', handleScroll);
     handleScroll(); 
+}
+
+/* Intercepta clics en enlaces de anclaje internos (navbar, footer, CTAs) para desplazamiento suave */
+function initSmoothScroll() {
+    const header = document.querySelector('.header');
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (!href || href === '#') return;
+
+            const target = document.querySelector(href);
+            if (!target) return;
+
+            e.preventDefault();
+
+            /* Compensa la altura variable del header fijo (cambia al aplicar la clase 'scrolled') */
+            const headerOffset = header ? header.offsetHeight : 0;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+
+            /* Actualiza la URL con el hash de la sección sin provocar un salto brusco */
+            if (history.pushState) {
+                history.pushState(null, '', href);
+            }
+        });
+    });
 }
 
 /* Gestiona el estado del menú hamburguesa móvil y la alternancia del icono */
