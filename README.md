@@ -3,25 +3,30 @@
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-A professional, responsive landing page designed specifically for a podiatry clinic. This web project focuses on providing a clean, accessible, and user-friendly experience for patients looking for foot care services.
+A professional, responsive single-page application (Essential Architecture) designed specifically for a podiatry clinic. This web project focuses on high conversion rates, providing a clean, accessible, and highly optimized user experience for patients looking for specialized foot care services.
 
-## Features
+## ✨ Features
 
-* **Modern UI/UX:** Clean design tailored for the healthcare sector to build trust and professionalism.
-* **Smooth Animations:** Integrated CSS and JavaScript animations for a dynamic and engaging browsing experience.
-* **Service Showcase:** Detailed sections explaining various podiatry treatments and services.
-* **Interactive Contact & Location:** Easy-to-find clinic location details, maps integration, and contact forms for patient inquiries.
+* **Essential Single-Page Architecture:** Streamlined navigation flow with custom vanilla JavaScript implementation for fluid smooth-scrolling between core sections (Home, Services, Location, Contact) without page reloads.
+* **High-Conversion CTAs (WhatsApp):** Direct integration with WhatsApp to eliminate friction, allowing patients to instantly schedule appointments and send inquiries.
+* **Modern UI/UX for Healthcare:** Clean, trust-building design tailored for the medical sector, featuring subtle CSS micro-interactions and an intuitive layout.
+* **Service Showcase:** Detailed, card-based sections clearly explaining various podiatry treatments, procedures, and medical equipment.
+* **Interactive Location & Contact:** Embedded interactive maps for seamless clinic navigation and highly accessible contact data points.
+* **100% Responsive Design:** Mobile-first layout engineered to adapt flawlessly across all smartphone, tablet, and desktop viewports.
 
-## Technologies Used
+## 🛠 Technologies Used
 
-* **Frontend:** HTML5, CSS3, Vanilla JavaScript.
+* **Frontend:** Semantic HTML5, CSS3 (Custom properties, Flexbox/Grid).
+* **Scripting:** Vanilla JavaScript (ES6+) for DOM manipulation and smooth scroll routing.
 * **Version Control:** Git & GitHub.
 
-## Installation & Setup
+## 🚀 Installation & Setup
 
 Follow these steps to deploy the project locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/jp-software-dev/podiatrist-web.git
+   git clone [https://github.com/jp-software-dev/podiatrist-web.git](https://github.com/jp-software-dev/podiatrist-web.git)
