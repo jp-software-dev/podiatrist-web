@@ -2,13 +2,13 @@
 
 /* Define la paleta de colores, fuentes, sombras y transiciones del sitio */
 :root {
-  --primary: #2d4739;
-  --primary-dark: #1a2a22;
-  --accent: #d4a762;
-  --accent-light: #e6c79c;
-  --bg-cream: #fefae0;
-  --text-dark: #1a2a22;
-  --text-light: rgba(26, 42, 34, 0.7);
+  --primary: #1e3a5f;
+  --primary-dark: #142942;
+  --accent: #3e92cc;
+  --accent-light: #8fc7e8;
+  --bg-cream: #f4f6f8;
+  --text-dark: #16283f;
+  --text-light: rgba(22, 40, 63, 0.7);
   --white: #ffffff;
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
@@ -16,7 +16,7 @@
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-accent: 0 0 20px rgba(212, 167, 98, 0.5);
+  --shadow-accent: 0 0 20px rgba(62, 146, 204, 0.5);
   --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   --border-radius: 24px;
   --font-headers: 'Montserrat', sans-serif;
@@ -384,6 +384,170 @@ h1, h2, h3, h4 {
   color: var(--accent);
 }
 
+/* Sobre el Doctor (About) Section */
+
+/* Fondo crema para diferenciar el bloque de presentación del héroe oscuro y de la sección de servicios */
+.about-section {
+  background-color: var(--bg-cream);
+}
+
+/* Divide la sección en foto y contenido, con la foto ligeramente más angosta que el texto */
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Centra la columna de la fotografía dentro de su mitad de la cuadrícula */
+.about-media {
+  display: flex;
+  justify-content: center;
+}
+
+/* Contenedor relativo de la foto que sirve de referencia para las formas decorativas */
+.about-photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Tarjeta dorada decorativa que asoma detrás de la fotografía, aporta profundidad editorial */
+.about-photo-frame::before {
+  content: '';
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+  border-radius: var(--border-radius);
+  z-index: 0;
+}
+
+/* Fotografía del doctor con recorte redondeado, proporción fija y sombra suave */
+.about-photo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-xl);
+  background-color: var(--white);
+}
+
+/* Insignia flotante con los años de experiencia, superpuesta a la esquina inferior de la foto */
+.about-experience-badge {
+  position: absolute;
+  z-index: 2;
+  bottom: -28px;
+  left: -28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 18px 24px;
+  border-radius: 20px;
+  border: 3px solid var(--white);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Número grande y dorado dentro de la insignia de experiencia */
+.about-experience-number {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* Etiqueta pequeña en mayúsculas debajo del número de la insignia */
+.about-experience-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  line-height: 1.3;
+}
+
+/* Pequeña palabra de apertura en dorado que antecede al título de la sección */
+.about-eyebrow {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+/* Alinea el título de esta sección a la izquierda, a diferencia del encabezado centrado por defecto */
+.about-title {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+/* Alinea el divisor dorado a la izquierda debajo del título */
+.about-divider {
+  margin: 0 0 24px 0;
+}
+
+/* Párrafo de presentación con ancho limitado para mantener una línea de lectura cómoda */
+.about-text {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin-bottom: 40px;
+}
+
+/* Lista vertical de la trayectoria académica y profesional del doctor */
+.about-timeline {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Fila individual de la trayectoria: ícono a la izquierda, texto a la derecha */
+.about-timeline-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Caja de ícono en azul marino que identifica cada hito de la trayectoria */
+.about-timeline-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary) 0%, #3d5a80 100%);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+/* Título de cada hito de la trayectoria (ej. "Formación Académica") */
+.about-timeline-text h4 {
+  color: var(--primary);
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+/* Descripción breve de cada hito de la trayectoria */
+.about-timeline-text p {
+  color: var(--text-light);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
 /* Servicios Section */
 
 /* Añade espaciado superior e inferior para separar cada bloque principal de la página */
@@ -425,93 +589,110 @@ h1, h2, h3, h4 {
   margin: 0 auto;
 }
 
-/* Crea una cuadrícula responsiva para las tarjetas de servicios: 1 columna en móvil, 2 en tablet y 3 fijas en escritorio */
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+/* Fondo propio de la sección de Servicios: degradado suave entre crema y blanco con resplandores de color */
+.services-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--white) 0%, var(--bg-cream) 50%, var(--white) 100%);
 }
 
-@media (min-width: 640px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* Resplandor verde difuminado en la esquina superior izquierda para dar profundidad al fondo */
+.services-section::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 420px;
+  height: 420px;
+  background: var(--primary);
+  opacity: 0.08;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
 }
 
-@media (min-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* Resplandor dorado difuminado en la esquina inferior derecha, en simetría con el verde superior */
+.services-section::after {
+  content: '';
+  position: absolute;
+  bottom: -140px;
+  right: -140px;
+  width: 460px;
+  height: 460px;
+  background: var(--accent);
+  opacity: 0.1;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Estilo claro y con un sutil degradado para las tarjetas de servicios base */
-.service-card {
-  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(254,250,224,0.5) 100%);
-  padding: 40px;
-  border-radius: var(--border-radius);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: var(--transition);
+/* Mantiene el contenido por encima de los resplandores decorativos del fondo */
+.services-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Lista editorial en zig-zag: cada servicio ocupa una fila completa alternando imagen y texto */
+.services-editorial {
   display: flex;
   flex-direction: column;
+  gap: 100px;
 }
 
-/* Eleva la tarjeta y genera una sombra de color para destacar el elemento al pasar el cursor */
-.service-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 30px 60px -12px rgba(45, 71, 57, 0.15);
-}
-
-/* Estiliza la caja que contiene el ícono de cada servicio dándole fondo verde oscuro */
-.service-icon {
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, var(--primary) 0%, #527e6e 100%);
-  border-radius: 16px;
+/* Fila de servicio: imagen y contenido lado a lado, ambos ocupando la mitad del ancho */
+.service-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-size: 1.75rem;
-  margin-bottom: 32px;
+  gap: 64px;
+}
+
+/* Invierte el orden para que la imagen quede a la derecha y el texto a la izquierda */
+.service-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Contenedor de la imagen: define proporción, recorte redondeado y sombra suave */
+.service-row-media {
+  position: relative;
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+/* La fotografía cubre su contenedor con bordes redondeados y sombra, sin distorsionarse */
+.service-row-media img {
+  display: block;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-xl);
   transition: var(--transition);
 }
 
-/* Rota ligeramente el ícono cuando el usuario hace hover en la tarjeta del servicio */
-.service-card:hover .service-icon {
-  transform: rotate(12deg);
+/* Ligero zoom sutil en la imagen al pasar el cursor sobre la fila completa */
+.service-row:hover .service-row-media img {
+  transform: scale(1.03);
 }
 
-/* Invierte los colores a fondo oscuro y texto claro para resaltar el servicio principal */
-.service-card.featured {
-  background-color: var(--primary);
+/* Columna de texto: título, descripción e íconos de características */
+.service-row-content {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+/* Resalta con un borde azul la imagen del servicio "featured" para diferenciarlo visualmente */
+.service-row.featured .service-row-media img {
   border: 4px solid var(--accent);
-  color: var(--white);
-  position: relative;
-  background-image: none;
 }
 
-/* Fuerza color blanco en el título de la tarjeta destacada */
-.service-card.featured .service-title {
-  color: var(--white);
-}
-
-/* Aclara la descripción y las características dentro de la tarjeta destacada */
-.service-card.featured .service-description,
-.service-card.featured .service-features li {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* Cambia los colores del ícono en la tarjeta destacada (fondo translúcido, ícono dorado) */
-.service-card.featured .service-icon {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--accent);
-}
-
-/* Pequeña etiqueta flotante dorada en la esquina de tarjetas especiales */
+/* Etiqueta flotante en azul sobre la esquina de la imagen en servicios destacados */
 .badge {
   position: absolute;
   top: 16px;
-  right: 16px;
+  left: 16px;
+  z-index: 2;
   background-color: var(--accent);
   color: var(--white);
   font-size: 10px;
@@ -520,20 +701,35 @@ h1, h2, h3, h4 {
   border-radius: 100px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  box-shadow: var(--shadow-md);
+}
+
+/* Estiliza la caja que contiene el ícono de cada servicio dándole fondo azul marino */
+.service-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--primary) 0%, #3d5a80 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.75rem;
+  margin-bottom: 32px;
 }
 
 /* Da tamaño grande y color verde oscuro al nombre de cada tratamiento */
 .service-title {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   margin-bottom: 16px;
   color: var(--primary);
 }
 
-/* Estiliza la explicación textual del tratamiento haciéndola flexible */
+/* Estiliza la explicación textual del tratamiento */
 .service-description {
   color: var(--text-light);
   margin-bottom: 32px;
-  flex-grow: 1;
+  font-size: 1.05rem;
 }
 
 /* Quita las viñetas por defecto de la lista de detalles del servicio */
@@ -547,9 +743,9 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 12px;
   margin-bottom: 12px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: rgba(26, 42, 34, 0.8);
+  color: rgba(22, 40, 63, 0.8);
 }
 
 /* Pinta de color dorado las palomitas o viñetas de las listas de servicio */
@@ -919,4 +1115,31 @@ h1, h2, h3, h4 {
 
   /* Expande el contenedor de estadísticas para que se alinee con el ancho total de los botones */
   .hero-stats { max-width: 100%; }
+
+  /* Reduce la separación entre filas de servicios en pantallas pequeñas */
+  .services-editorial { gap: 56px; }
+
+  /* Apila cada fila de servicio: imagen arriba, texto abajo, en todos los bloques (incluidos los invertidos) */
+  .service-row,
+  .service-row.reverse {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* Reduce la altura de la fotografía para que se vea proporcionada en móvil */
+  .service-row-media img { height: 260px; }
+
+  /* Apila la foto del doctor y el contenido en una sola columna centrada */
+  .about-grid { grid-template-columns: 1fr; gap: 56px; }
+
+  /* Centra el texto, el título y el divisor de la columna de contenido en móvil */
+  .about-content { text-align: center; }
+  .about-title { text-align: center; }
+  .about-divider { margin: 0 auto 24px; }
+  .about-text { margin-left: auto; margin-right: auto; }
+
+  /* Reduce el tamaño máximo de la foto y reajusta la insignia para que no se salga del contenedor */
+  .about-photo-frame { max-width: 260px; }
+  .about-photo-frame::before { top: -14px; right: -14px; }
+  .about-experience-badge { left: 50%; bottom: -20px; transform: translateX(-50%); }
 }
