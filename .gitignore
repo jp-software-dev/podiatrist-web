@@ -2,9 +2,7 @@
 .vscode/
 .hintrc
 
-# --- ARCHIVOS DE SISTEMA---
+# --- ARCHIVOS DE SISTEMA ---
 Thumbs.db
 desktop.ini
-
-# --- ASSETS ---
-public/images/
+.DS_Store
