@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Clínica Podológica. Tratamientos avanzados y cuidado integral del pie.">
-  <meta name="theme-color" content="#2d4739">
+  <meta name="theme-color" content="#1e3a5f">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -41,6 +41,7 @@
       
       <nav class="nav-menu" id="navMenu">
         <a href="#inicio" class="nav-link active">Inicio</a>
+        <a href="#sobre-mi" class="nav-link">Sobre mí</a>
         <a href="#servicios" class="nav-link">Servicios</a>
         <a href="#ubicacion" class="nav-link">Ubicación</a>
         <a href="#contacto" class="nav-link">Contacto</a>
@@ -82,132 +83,235 @@
       </div>
     </section>
 
-    <section class="section" id="servicios">
+    <section class="section about-section" id="sobre-mi">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-media reveal">
+            <div class="about-photo-frame">
+              <img src="public/images/Doctor.png" alt="Dr. en Podología, especialista en cuidado clínico del pie" class="about-photo">
+              <div class="about-experience-badge">
+                <span class="about-experience-number">10+</span>
+                <span class="about-experience-label">Años de<br>Experiencia</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-content reveal">
+            <span class="about-eyebrow">Conóceme</span>
+            <h2 class="section-title about-title">Sobre <span class="title-accent">el Doctor</span></h2>
+            <div class="section-divider about-divider"></div>
+            <p class="about-text">Especialista en podología clínica con más de 10 años de experiencia dedicados al cuidado integral del pie. Combino una sólida formación académica con protocolos médicos estandarizados y tecnología de vanguardia para ofrecer diagnósticos precisos y tratamientos seguros a cada paciente.</p>
+
+            <ul class="about-timeline">
+              <li class="about-timeline-item">
+                <div class="about-timeline-icon"><i class="ti ti-school"></i></div>
+                <div class="about-timeline-text">
+                  <h4>Formación Académica</h4>
+                  <p>Licenciatura en Podología con especialización en biomecánica clínica y cuidado integral del pie.</p>
+                </div>
+              </li>
+              <li class="about-timeline-item">
+                <div class="about-timeline-icon"><i class="ti ti-certificate"></i></div>
+                <div class="about-timeline-text">
+                  <h4>Especialización Clínica</h4>
+                  <p>Formación continua en protocolos de pie diabético, ortopodología y terapias láser podológicas.</p>
+                </div>
+              </li>
+              <li class="about-timeline-item">
+                <div class="about-timeline-icon"><i class="ti ti-briefcase"></i></div>
+                <div class="about-timeline-text">
+                  <h4>Experiencia Profesional</h4>
+                  <p>Más de una década ejerciendo la podología clínica, atendiendo a más de 1000 pacientes con un enfoque médico integral.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="servicios">
       <div class="container">
         <div class="section-header reveal">
           <h2 class="section-title">Servicios <span class="title-accent">Especializados</span></h2>
           <div class="section-divider"></div>
           <p class="section-subtitle">Soluciones podológicas integrales con enfoque médico y tecnología de punta.</p>
         </div>
-        
-        <div class="services-grid">
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <i class="ti ti-report-medical"></i>
-            </div>
-            <h3 class="service-title">Consulta Diagnóstica</h3>
-            <p class="service-description">Valoración clínica detallada que incluye anamnesis, revisión vascular periférica y dermatológica.</p>
-            <ul class="service-features">
-              <li><i class="ti ti-circle-check-filled"></i> Historial Clínico Digital</li>
-              <li><i class="ti ti-circle-check-filled"></i> Exploración Física Completa</li>
-              <li><i class="ti ti-circle-check-filled"></i> Plan Terapéutico</li>
-            </ul>
-          </div>
-          
-          <div class="service-card featured reveal">
-            <div class="badge">Más solicitado</div>
-            <div class="service-icon">
-              <i class="ti ti-scooter"></i>
-            </div>
-            <h3 class="service-title">Uñas Encarnadas</h3>
-            <p class="service-description">Tratamiento definitivo de la onicocriptosis. Realizamos espiculotomías con técnica estéril para alivio inmediato.</p>
-            <ul class="service-features">
-              <li><i class="ti ti-circle-check-filled"></i> Procedimiento Indoloro</li>
-              <li><i class="ti ti-circle-check-filled"></i> Prevención de Recidivas</li>
-              <li><i class="ti ti-circle-check-filled"></i> Recuperación Estética</li>
-            </ul>
-          </div>
-          
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <i class="ti ti-razor"></i>
-            </div>
-            <h3 class="service-title">Quiropodia Clínica</h3>
-            <p class="service-description">Deslaminado profesional de hiperqueratosis (callosidades) y helomas. Corte anatómico y fresado terapéutico.</p>
-            <ul class="service-features">
-              <li><i class="ti ti-circle-check-filled"></i> Instrumental Estéril</li>
-              <li><i class="ti ti-circle-check-filled"></i> Descarga de Presiones</li>
-              <li><i class="ti ti-circle-check-filled"></i> Hidratación Profunda</li>
-            </ul>
-          </div>
-          
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <i class="ti ti-microscope"></i>
-            </div>
-            <h3 class="service-title">Onicomicosis</h3>
-            <p class="service-description">Protocolo antimicótico combinado. Limpieza mecánica profunda de la lámina ungueal y terapias tópicas.</p>
-            <ul class="service-features">
-              <li><i class="ti ti-circle-check-filled"></i> Recuperación de la Uña</li>
-              <li><i class="ti ti-circle-check-filled"></i> Seguimiento Mensual</li>
-              <li><i class="ti ti-circle-check-filled"></i> Cultivo Micológico</li>
-            </ul>
-          </div>
-          
-          <div class="service-card featured reveal">
-            <div class="service-icon">
-              <i class="ti ti-shield-check"></i>
-            </div>
-            <h3 class="service-title">Pie Diabético</h3>
-            <p class="service-description">Protocolo clínico de alta seguridad para el pie de riesgo. Monitoreo periódico para evitar complicaciones.</p>
-            <ul class="service-features">
-              <li><i class="ti ti-circle-check-filled"></i> Evaluación Neuro-Vascular</li>
-              <li><i class="ti ti-circle-check-filled"></i> Prevención de Úlceras</li>
-              <li><i class="ti ti-circle-check-filled"></i> Educación Autocuidado</li>
-            </ul>
-          </div>
-          
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <i class="ti ti-shoe"></i>
-            </div>
-            <h3 class="service-title">Ortopodología</h3>
-            <p class="service-description">Diseño de órtesis plantares (plantillas) personalizadas mediante estudio biomecánico para corregir la marcha.</p>
-            <ul class="service-features">
-              <li><i class="ti ti-circle-check-filled"></i> Materiales Termoconformables</li>
-              <li><i class="ti ti-circle-check-filled"></i> Corrección de Ejes</li>
-              <li><i class="ti ti-circle-check-filled"></i> Adaptación a Calzado</li>
-            </ul>
-          </div>
 
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <i class="ti ti-activity"></i>
-            </div>
-            <h3 class="service-title">Estudio Biomecánico de la Marcha</h3>
-            <p class="service-description">Análisis computarizado de la pisada y distribución de presiones plantares para detectar alteraciones posturales y prevenir lesiones.</p>
-            <ul class="service-features">
-              <li><i class="ti ti-circle-check-filled"></i> Plantoscopía Digital</li>
-              <li><i class="ti ti-circle-check-filled"></i> Mapa de Presiones</li>
-              <li><i class="ti ti-circle-check-filled"></i> Informe Postural</li>
-            </ul>
-          </div>
+        <div class="services-editorial">
 
-          <div class="service-card featured reveal">
-            <div class="service-icon">
-              <i class="ti ti-virus"></i>
+          <article class="service-row reveal">
+            <div class="service-row-media">
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=900&q=80" alt="Exploración clínica de un pie en consultorio podológico" loading="lazy">
             </div>
-            <h3 class="service-title">Tratamiento de Verrugas Plantares</h3>
-            <p class="service-description">Eliminación clínica de verrugas plantares (papiloma viral) mediante criocirugía o electrocoagulación con técnica estéril.</p>
-            <ul class="service-features">
-              <li><i class="ti ti-circle-check-filled"></i> Diagnóstico Diferencial</li>
-              <li><i class="ti ti-circle-check-filled"></i> Procedimiento Ambulatorio</li>
-              <li><i class="ti ti-circle-check-filled"></i> Prevención de Contagio</li>
-            </ul>
-          </div>
+            <div class="service-row-content">
+              <div class="service-icon">
+                <i class="ti ti-report-medical"></i>
+              </div>
+              <h3 class="service-title">Consulta Diagnóstica</h3>
+              <p class="service-description">Valoración clínica detallada que incluye anamnesis, revisión vascular periférica y dermatológica.</p>
+              <ul class="service-features">
+                <li><i class="ti ti-circle-check-filled"></i> Historial Clínico Digital</li>
+                <li><i class="ti ti-circle-check-filled"></i> Exploración Física Completa</li>
+                <li><i class="ti ti-circle-check-filled"></i> Plan Terapéutico</li>
+                <li><i class="ti ti-circle-check-filled"></i> Orientación Preventiva</li>
+              </ul>
+            </div>
+          </article>
 
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <i class="ti ti-bolt"></i>
+          <article class="service-row reverse featured reveal">
+            <div class="service-row-media">
+              <span class="badge">Más solicitado</span>
+              <img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?auto=format&fit=crop&w=900&q=80" alt="Pies con cuidado de uñas limpio y profesional" loading="lazy">
             </div>
-            <h3 class="service-title">Terapia Láser Podológica</h3>
-            <p class="service-description">Tecnología láser de baja intensidad para acelerar la regeneración tisular, reducir la inflamación y tratar hongos y dolor crónico.</p>
-            <ul class="service-features">
-              <li><i class="ti ti-circle-check-filled"></i> No Invasivo</li>
-              <li><i class="ti ti-circle-check-filled"></i> Sin Tiempo de Recuperación</li>
-              <li><i class="ti ti-circle-check-filled"></i> Acción Antiinflamatoria</li>
-            </ul>
-          </div>
+            <div class="service-row-content">
+              <div class="service-icon">
+                <i class="ti ti-scooter"></i>
+              </div>
+              <h3 class="service-title">Uñas Encarnadas</h3>
+              <p class="service-description">Tratamiento definitivo de la onicocriptosis. Realizamos espiculotomías con técnica estéril para alivio inmediato.</p>
+              <ul class="service-features">
+                <li><i class="ti ti-circle-check-filled"></i> Procedimiento Indoloro</li>
+                <li><i class="ti ti-circle-check-filled"></i> Prevención de Recidivas</li>
+                <li><i class="ti ti-circle-check-filled"></i> Recuperación Estética</li>
+                <li><i class="ti ti-circle-check-filled"></i> Técnica Estéril Certificada</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-row reveal">
+            <div class="service-row-media">
+              <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=80" alt="Tratamiento de spa podológico para el cuidado del pie" loading="lazy">
+            </div>
+            <div class="service-row-content">
+              <div class="service-icon">
+                <i class="ti ti-razor"></i>
+              </div>
+              <h3 class="service-title">Quiropodia Clínica</h3>
+              <p class="service-description">Deslaminado profesional de hiperqueratosis (callosidades) y helomas. Corte anatómico y fresado terapéutico.</p>
+              <ul class="service-features">
+                <li><i class="ti ti-circle-check-filled"></i> Instrumental Estéril</li>
+                <li><i class="ti ti-circle-check-filled"></i> Descarga de Presiones</li>
+                <li><i class="ti ti-circle-check-filled"></i> Hidratación Profunda</li>
+                <li><i class="ti ti-circle-check-filled"></i> Fresado Terapéutico</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-row reverse reveal">
+            <div class="service-row-media">
+              <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=80" alt="Masaje terapéutico en el pie con técnica profesional" loading="lazy">
+            </div>
+            <div class="service-row-content">
+              <div class="service-icon">
+                <i class="ti ti-microscope"></i>
+              </div>
+              <h3 class="service-title">Onicomicosis</h3>
+              <p class="service-description">Protocolo antimicótico combinado. Limpieza mecánica profunda de la lámina ungueal y terapias tópicas.</p>
+              <ul class="service-features">
+                <li><i class="ti ti-circle-check-filled"></i> Recuperación de la Uña</li>
+                <li><i class="ti ti-circle-check-filled"></i> Seguimiento Mensual</li>
+                <li><i class="ti ti-circle-check-filled"></i> Cultivo Micológico</li>
+                <li><i class="ti ti-circle-check-filled"></i> Terapia Tópica Personalizada</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-row featured reveal">
+            <div class="service-row-media">
+              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80" alt="Pies en baño de spa con piedras, cuidado higiénico y relajante" loading="lazy">
+            </div>
+            <div class="service-row-content">
+              <div class="service-icon">
+                <i class="ti ti-shield-check"></i>
+              </div>
+              <h3 class="service-title">Pie Diabético</h3>
+              <p class="service-description">Protocolo clínico de alta seguridad para el pie de riesgo. Monitoreo periódico para evitar complicaciones.</p>
+              <ul class="service-features">
+                <li><i class="ti ti-circle-check-filled"></i> Evaluación Neuro-Vascular</li>
+                <li><i class="ti ti-circle-check-filled"></i> Prevención de Úlceras</li>
+                <li><i class="ti ti-circle-check-filled"></i> Educación Autocuidado</li>
+                <li><i class="ti ti-circle-check-filled"></i> Monitoreo Periódico</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-row reverse reveal">
+            <div class="service-row-media">
+              <img src="https://images.unsplash.com/photo-1470114716159-e389f8712fda?auto=format&fit=crop&w=900&q=80" alt="Pies descalzos caminando sobre pasto, marcha saludable" loading="lazy">
+            </div>
+            <div class="service-row-content">
+              <div class="service-icon">
+                <i class="ti ti-shoe"></i>
+              </div>
+              <h3 class="service-title">Ortopodología</h3>
+              <p class="service-description">Diseño de órtesis plantares (plantillas) personalizadas mediante estudio biomecánico para corregir la marcha.</p>
+              <ul class="service-features">
+                <li><i class="ti ti-circle-check-filled"></i> Materiales Termoconformables</li>
+                <li><i class="ti ti-circle-check-filled"></i> Corrección de Ejes</li>
+                <li><i class="ti ti-circle-check-filled"></i> Adaptación a Calzado</li>
+                <li><i class="ti ti-circle-check-filled"></i> Estudio Biomecánico Previo</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-row reveal">
+            <div class="service-row-media">
+              <img src="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?auto=format&fit=crop&w=900&q=80" alt="Pies descalzos en la arena, análisis de la pisada y el movimiento" loading="lazy">
+            </div>
+            <div class="service-row-content">
+              <div class="service-icon">
+                <i class="ti ti-activity"></i>
+              </div>
+              <h3 class="service-title">Estudio Biomecánico de la Marcha</h3>
+              <p class="service-description">Análisis computarizado de la pisada y distribución de presiones plantares para detectar alteraciones posturales y prevenir lesiones.</p>
+              <ul class="service-features">
+                <li><i class="ti ti-circle-check-filled"></i> Plantoscopía Digital</li>
+                <li><i class="ti ti-circle-check-filled"></i> Mapa de Presiones</li>
+                <li><i class="ti ti-circle-check-filled"></i> Informe Postural</li>
+                <li><i class="ti ti-circle-check-filled"></i> Recomendaciones Personalizadas</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-row reverse featured reveal">
+            <div class="service-row-media">
+              <img src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c1?auto=format&fit=crop&w=900&q=80" alt="Piel del pie sana y cuidada tras tratamiento dermatológico" loading="lazy">
+            </div>
+            <div class="service-row-content">
+              <div class="service-icon">
+                <i class="ti ti-virus"></i>
+              </div>
+              <h3 class="service-title">Tratamiento de Verrugas Plantares</h3>
+              <p class="service-description">Eliminación clínica de verrugas plantares (papiloma viral) mediante criocirugía o electrocoagulación con técnica estéril.</p>
+              <ul class="service-features">
+                <li><i class="ti ti-circle-check-filled"></i> Diagnóstico Diferencial</li>
+                <li><i class="ti ti-circle-check-filled"></i> Procedimiento Ambulatorio</li>
+                <li><i class="ti ti-circle-check-filled"></i> Prevención de Contagio</li>
+                <li><i class="ti ti-circle-check-filled"></i> Técnica Estéril</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-row reveal">
+            <div class="service-row-media">
+              <img src="https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?auto=format&fit=crop&w=900&q=80" alt="Pies en ambiente clínico premium para terapia con tecnología láser" loading="lazy">
+            </div>
+            <div class="service-row-content">
+              <div class="service-icon">
+                <i class="ti ti-bolt"></i>
+              </div>
+              <h3 class="service-title">Terapia Láser Podológica</h3>
+              <p class="service-description">Tecnología láser de baja intensidad para acelerar la regeneración tisular, reducir la inflamación y tratar hongos y dolor crónico.</p>
+              <ul class="service-features">
+                <li><i class="ti ti-circle-check-filled"></i> No Invasivo</li>
+                <li><i class="ti ti-circle-check-filled"></i> Sin Tiempo de Recuperación</li>
+                <li><i class="ti ti-circle-check-filled"></i> Acción Antiinflamatoria</li>
+                <li><i class="ti ti-circle-check-filled"></i> Efecto Analgésico Inmediato</li>
+              </ul>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -300,6 +404,7 @@
           <h4 class="footer-title">Navegación</h4>
           <ul class="footer-links">
             <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#ubicacion">Ubicación</a></li>
             <li><a href="#contacto">Contacto</a></li>
