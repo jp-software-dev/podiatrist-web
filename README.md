@@ -16,6 +16,8 @@ A professional, responsive single-page application (Essential Architecture) desi
 * **Service Showcase:** Detailed, card-based sections clearly explaining various podiatry treatments, procedures, and medical equipment.
 * **Interactive Location & Contact:** Embedded interactive maps for seamless clinic navigation and highly accessible contact data points.
 * **100% Responsive Design:** Mobile-first layout engineered to adapt flawlessly across all smartphone, tablet, and desktop viewports.
+* **Optimized Image Delivery:** Service and profile images are served as WebP (quality 85) through `<picture>` elements with the original PNG as a fallback, cutting image weight from ~21 MB to ~1.5 MB.
+* **Stable Layout Loading:** Every image declares its real `width` and `height` to reserve space and prevent layout shifts (CLS), and uses `loading="lazy"` + `decoding="async"`; the hero video poster is preloaded with `fetchpriority="high"` to improve LCP.
 
 ## 🛠 Technologies Used
 
