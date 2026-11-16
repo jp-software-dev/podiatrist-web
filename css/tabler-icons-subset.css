@@ -1,0 +1,31 @@
+/*!
+ * Tabler Icons 2.47.0 by tabler - https://tabler.io (subset: solo los iconos usados en el sitio)
+ * License - https://github.com/tabler/tabler-icons/blob/master/LICENSE
+ */
+@font-face{font-family:"tabler-icons";font-style:normal;font-weight:400;src:url("../public/fonts/tabler-icons-subset.woff") format("woff")}
+.ti{font-family:"tabler-icons" !important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.ti-activity:before{content:"\ed23"}
+.ti-bolt:before{content:"\ea38"}
+.ti-brand-facebook:before{content:"\ec1a"}
+.ti-brand-instagram:before{content:"\ec20"}
+.ti-brand-tiktok:before{content:"\ec73"}
+.ti-brand-whatsapp:before{content:"\ec74"}
+.ti-briefcase:before{content:"\ea46"}
+.ti-calendar-check:before{content:"\f824"}
+.ti-certificate:before{content:"\ed76"}
+.ti-chevron-right:before{content:"\ea61"}
+.ti-circle-check-filled:before{content:"\f704"}
+.ti-clock:before{content:"\ea70"}
+.ti-mail:before{content:"\eae5"}
+.ti-map-pin:before{content:"\eae8"}
+.ti-menu-2:before{content:"\ec42"}
+.ti-microscope:before{content:"\ef64"}
+.ti-phone:before{content:"\eb09"}
+.ti-razor:before{content:"\f4b5"}
+.ti-report-medical:before{content:"\eecc"}
+.ti-school:before{content:"\ecf7"}
+.ti-scooter:before{content:"\ec6c"}
+.ti-shield-check:before{content:"\eb22"}
+.ti-shoe:before{content:"\efd2"}
+.ti-virus:before{content:"\eb74"}
+.ti-x:before{content:"\eb55"}

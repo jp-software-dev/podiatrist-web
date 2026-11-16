@@ -19,10 +19,10 @@
   
   <title>Clínica Podológica - Dr. en Podología</title>
   
-  <link rel="preload" as="image" href="https://images.pexels.com/videos/11492183/pexels-photo-11492183.jpeg?auto=compress&w=1260&h=750&dpr=1" fetchpriority="high">
+  <link rel="preload" as="image" href="public/videos/hero-poster.webp" type="image/webp" fetchpriority="high">
   <link rel="icon" href="public/icono_circular.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/tabler-icons.min.css">
+  <link rel="stylesheet" href="css/tabler-icons-subset.css">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -52,8 +52,9 @@
 
   <main>
     <section class="hero" id="inicio">
-      <video class="hero-video" autoplay muted loop playsinline poster="https://images.pexels.com/videos/11492183/pexels-photo-11492183.jpeg?auto=compress&w=1260&h=750&dpr=1">
-        <source src="https://videos.pexels.com/video-files/11492183/11492183-uhd_2560_1440_50fps.mp4" type="video/mp4">
+      <video class="hero-video" autoplay muted loop playsinline poster="public/videos/hero-poster.webp" width="1280" height="720">
+        <source src="public/videos/hero-360.mp4" type="video/mp4" media="(max-width: 768px)">
+        <source src="public/videos/hero-720.mp4" type="video/mp4">
       </video>
       <div class="hero-overlay"></div>
       
