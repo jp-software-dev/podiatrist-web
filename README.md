@@ -1,81 +1,91 @@
-# Podiatry Clinic Landing Page
+# Landing Page para Clínica Podológica
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
-A professional, responsive single-page application (Essential Architecture) designed specifically for a podiatry clinic. This web project focuses on high conversion rates, providing a clean, accessible, and highly optimized user experience for patients looking for specialized foot care services.
+Sitio de una sola página (arquitectura esencial), profesional y responsivo, diseñado para una clínica podológica. Está enfocado en la conversión y ofrece una experiencia limpia, accesible y optimizada para pacientes que buscan atención especializada del pie.
 
-## ✨ Features
+## ✨ Características
 
-* **Essential Single-Page Architecture:** Streamlined navigation flow with custom vanilla JavaScript implementation for fluid smooth-scrolling between core sections (Home, Services, Location, Contact) without page reloads.
-* **High-Conversion CTAs (WhatsApp):** Direct integration with WhatsApp to eliminate friction, allowing patients to instantly schedule appointments and send inquiries.
-* **Modern UI/UX for Healthcare:** Clean, trust-building design tailored for the medical sector, featuring subtle CSS micro-interactions and an intuitive layout.
-* **Service Showcase:** Detailed, card-based sections clearly explaining various podiatry treatments, procedures, and medical equipment.
-* **Interactive Location & Contact:** Embedded interactive maps for seamless clinic navigation and highly accessible contact data points.
-* **100% Responsive Design:** Mobile-first layout engineered to adapt flawlessly across all smartphone, tablet, and desktop viewports.
-* **Optimized Image Delivery:** Service and profile images are served as WebP (quality 85) through `<picture>` elements with the original PNG as a fallback, cutting image weight from ~21 MB to ~1.5 MB.
-* **Stable Layout Loading:** Every image declares its real `width` and `height` to reserve space and prevent layout shifts (CLS), and uses `loading="lazy"` + `decoding="async"`; the hero video poster is preloaded with `fetchpriority="high"` to improve LCP.
-* **Long-Term Asset Caching:** `vercel.json` serves everything under `/public` (images, icons and any local video) with `Cache-Control: public, max-age=31536000, immutable`. When replacing an asset, give it a new file name so browsers fetch the new version.
+* **Arquitectura de una sola página:** navegación fluida con JavaScript puro y desplazamiento suave entre las secciones principales (Inicio, Sobre mí, Servicios, Ubicación, Contacto) sin recargar la página.
+* **Llamadas a la acción por WhatsApp:** integración directa con WhatsApp para que los pacientes agenden citas y envíen consultas al instante.
+* **Diseño UI/UX para el sector salud:** estética limpia que transmite confianza, con microinteracciones sutiles en CSS y una distribución intuitiva.
+* **Catálogo de servicios:** secciones que explican cada tratamiento, procedimiento y equipo podológico.
+* **Ubicación y contacto interactivos:** mapa integrado y datos de contacto accesibles.
+* **100% responsivo:** diseño *mobile-first* que se adapta a teléfonos, tabletas y escritorio.
+* **Rendimiento optimizado:** imágenes WebP, video del hero alojado y comprimido, íconos reducidos a los que se usan y caché de larga duración. La página pasó de ~8.4 MB a ~0.66 MB en escritorio y ~0.47 MB en móvil.
 
-## 🛠 Technologies Used
+## 🛠 Tecnologías
 
-* **Frontend:** Semantic HTML5, CSS3 (Custom properties, Flexbox/Grid).
-* **Scripting:** Vanilla JavaScript (ES6+) for DOM manipulation and smooth scroll routing.
-* **Version Control:** Git & GitHub.
-* **Hosting:** Vercel (continuous deployment from the `main` branch on GitHub).
+* **Frontend:** HTML5 semántico y CSS3 (propiedades personalizadas, Flexbox/Grid).
+* **Scripts:** JavaScript puro (ES6+) para manipular el DOM y el desplazamiento suave.
+* **Íconos:** Tabler Icons 2.47.0 (subconjunto alojado en el propio sitio).
+* **Control de versiones:** Git y GitHub.
+* **Hosting:** Vercel, con despliegue continuo desde la rama `main` de GitHub.
 
-## 🚀 Installation & Setup
+## 🚀 Instalación
 
-Follow these steps to deploy the project locally:
+Sigue estos pasos para ejecutar el proyecto en tu equipo:
 
-1. Clone the repository:
+1. Clona el repositorio:
    ```bash
    git clone https://github.com/jp-software-dev/podiatrist-web.git
    ```
-2. Enter the project folder:
+2. Entra a la carpeta del proyecto:
    ```bash
    cd podiatrist-web
    ```
-3. Open `index.html` in your browser, or serve the folder with any static server, for example:
+3. Abre `index.html` en tu navegador o sirve la carpeta con cualquier servidor estático, por ejemplo:
    ```bash
    npx serve .
    ```
 
-No build step or dependencies are required.
+No requiere compilación ni dependencias.
 
-## 📁 Project Structure
+## 📁 Estructura del proyecto
 
 ```
 podiatrist-web/
-├── index.html           # Single-page markup
-├── css/styles.css       # Styles and responsive breakpoints
-├── js/main.js           # Navigation, smooth scroll and reveal effects
+├── index.html                     # Estructura de la página
+├── css/
+│   ├── styles.css                 # Estilos y puntos de quiebre responsivos
+│   └── tabler-icons-subset.css    # Solo los íconos de Tabler que usa el sitio
+├── js/main.js                     # Navegación, desplazamiento suave y animaciones de aparición
 ├── public/
 │   ├── icono_circular.ico
-│   └── images/          # WebP images + original PNG fallbacks
-└── vercel.json          # Cache headers for static assets
+│   ├── fonts/                     # Fuente de íconos reducida (≈6 KB)
+│   ├── images/                    # Imágenes WebP + PNG originales de respaldo
+│   └── videos/                    # Video del hero (720p y 360p) y su póster WebP
+└── vercel.json                    # Encabezados de caché para los recursos estáticos
 ```
 
-## ⚡ Performance
+## ⚡ Rendimiento
 
-| Optimization | Detail |
+| Optimización | Detalle |
 | --- | --- |
-| WebP images | Quality 85, original resolution; ~21 MB of PNG reduced to ~1.5 MB |
-| PNG fallback | Served only to browsers without WebP support, so it adds no weight for modern browsers |
-| Reserved space | Real `width` / `height` on every `<img>` to avoid layout shifts (CLS) |
-| Lazy loading | `loading="lazy"` and `decoding="async"` on all images |
-| Hero priority | Video poster preloaded with `fetchpriority="high"` to improve LCP |
-| Long-term cache | `Cache-Control: public, max-age=31536000, immutable` for `/public` on Vercel |
+| Imágenes WebP | Calidad 85 y resolución original; ~21 MB de PNG reducidos a ~1.5 MB |
+| Respaldo PNG | Solo lo descargan navegadores sin soporte WebP, así que no suma peso en navegadores actuales |
+| Espacio reservado | `width` y `height` reales en cada `<img>` y en el video para evitar saltos de diseño (CLS) |
+| Carga diferida | `loading="lazy"` y `decoding="async"` en todas las imágenes |
+| Video del hero | Alojado en el sitio, sin pista de audio: 720p (~286 KB) en escritorio y 360p (~97 KB) en móvil, en lugar del original 2560×1440 de ~3.5 MB |
+| Póster del hero | Primer cuadro del video en WebP (~43 KB), precargado con `fetchpriority="high"` |
+| Íconos | Subconjunto de 25 íconos de Tabler (~6 KB) en lugar de la fuente completa (~760 KB) |
+| Caché larga | `Cache-Control: public, max-age=31536000, immutable` para todo `/public` en Vercel |
 
-### Adding or replacing images
+### Agregar o reemplazar imágenes
 
-1. Convert the image to WebP (quality 85, max 1600px wide) and keep the original PNG next to it.
-2. Wrap it in a `<picture>` with the WebP `<source>` first and the PNG `<img>` as fallback, including its real `width` and `height`.
-3. Use a **new file name** when replacing an image: assets are cached for one year, so reusing a name would keep showing the old version.
+1. Convierte la imagen a WebP (calidad 85, máximo 1600 px de ancho) y guarda el PNG original junto a ella.
+2. Envuélvela en un `<picture>` con el `<source>` WebP primero y el `<img>` PNG como respaldo, con su `width` y `height` reales.
+3. Usa un **nombre de archivo nuevo** al reemplazar una imagen o video: los recursos se guardan en caché por un año y, con el mismo nombre, los visitantes seguirían viendo la versión anterior.
 
-## 🚢 Deployment
+### Agregar íconos
 
-Every push to `main` on GitHub triggers an automatic deployment on Vercel. Cache headers are defined in `vercel.json` and only apply to the Vercel deployment.
+La fuente de íconos solo contiene los 25 que usa el sitio. Para usar uno nuevo de Tabler hay que regenerar `public/fonts/tabler-icons-subset.woff` y agregar su regla en `css/tabler-icons-subset.css`; si no, el ícono no se verá.
+
+## 🚢 Despliegue
+
+Cada push a `main` en GitHub publica automáticamente el sitio en Vercel. Los encabezados de caché están en `vercel.json` y solo aplican al despliegue de Vercel.
