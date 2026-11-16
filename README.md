@@ -25,6 +25,7 @@ A professional, responsive single-page application (Essential Architecture) desi
 * **Frontend:** Semantic HTML5, CSS3 (Custom properties, Flexbox/Grid).
 * **Scripting:** Vanilla JavaScript (ES6+) for DOM manipulation and smooth scroll routing.
 * **Version Control:** Git & GitHub.
+* **Hosting:** Vercel (continuous deployment from the `main` branch on GitHub).
 
 ## 🚀 Installation & Setup
 
@@ -33,3 +34,48 @@ Follow these steps to deploy the project locally:
 1. Clone the repository:
    ```bash
    git clone https://github.com/jp-software-dev/podiatrist-web.git
+   ```
+2. Enter the project folder:
+   ```bash
+   cd podiatrist-web
+   ```
+3. Open `index.html` in your browser, or serve the folder with any static server, for example:
+   ```bash
+   npx serve .
+   ```
+
+No build step or dependencies are required.
+
+## 📁 Project Structure
+
+```
+podiatrist-web/
+├── index.html           # Single-page markup
+├── css/styles.css       # Styles and responsive breakpoints
+├── js/main.js           # Navigation, smooth scroll and reveal effects
+├── public/
+│   ├── icono_circular.ico
+│   └── images/          # WebP images + original PNG fallbacks
+└── vercel.json          # Cache headers for static assets
+```
+
+## ⚡ Performance
+
+| Optimization | Detail |
+| --- | --- |
+| WebP images | Quality 85, original resolution; ~21 MB of PNG reduced to ~1.5 MB |
+| PNG fallback | Served only to browsers without WebP support, so it adds no weight for modern browsers |
+| Reserved space | Real `width` / `height` on every `<img>` to avoid layout shifts (CLS) |
+| Lazy loading | `loading="lazy"` and `decoding="async"` on all images |
+| Hero priority | Video poster preloaded with `fetchpriority="high"` to improve LCP |
+| Long-term cache | `Cache-Control: public, max-age=31536000, immutable` for `/public` on Vercel |
+
+### Adding or replacing images
+
+1. Convert the image to WebP (quality 85, max 1600px wide) and keep the original PNG next to it.
+2. Wrap it in a `<picture>` with the WebP `<source>` first and the PNG `<img>` as fallback, including its real `width` and `height`.
+3. Use a **new file name** when replacing an image: assets are cached for one year, so reusing a name would keep showing the old version.
+
+## 🚢 Deployment
+
+Every push to `main` on GitHub triggers an automatic deployment on Vercel. Cache headers are defined in `vercel.json` and only apply to the Vercel deployment.
