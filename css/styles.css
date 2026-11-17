@@ -409,7 +409,7 @@ h1, h2, h3, h4 {
 .about-photo-frame {
   position: relative;
   width: 100%;
-  max-width: 380px;
+  max-width: 440px;
 }
 
 /* Tarjeta dorada decorativa que asoma detrás de la fotografía, aporta profundidad editorial */
@@ -431,8 +431,10 @@ h1, h2, h3, h4 {
   z-index: 1;
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: center;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-xl);
   background-color: var(--white);
@@ -1190,7 +1192,7 @@ h1, h2, h3, h4 {
   .about-text { margin-left: auto; margin-right: auto; }
 
   /* Reduce el tamaño máximo de la foto y reajusta la insignia para que no se salga del contenedor */
-  .about-photo-frame { max-width: 260px; }
+  .about-photo-frame { max-width: 300px; }
   .about-photo-frame::before { top: -14px; right: -14px; }
   .about-experience-badge { left: 50%; bottom: -20px; transform: translateX(-50%); }
 }
